@@ -215,3 +215,9 @@ canonical: "https://www.plumbinglocalpros.com/"
     </a>
   </div>
 </div>
+
+<script>
+  // If the user navigates back to the homepage, clear their contextual location
+  // so they see "Near You" instead of being stuck in the last visited state.
+  localStorage.removeItem('userLoc');
+</script>

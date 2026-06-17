@@ -569,18 +569,19 @@ nav { display: flex; align-items: center; }
 .interactive-usa-map svg {
   width: 100%;
   height: auto;
+  aspect-ratio: 959 / 593;
   filter: drop-shadow(0 4px 12px rgba(0,0,0,0.06));
 }
 .interactive-usa-map path {
-  fill: var(--primary);
+  fill: #cbd5e1; /* Default slate-300 */
   stroke: #ffffff;
-  stroke-width: 1;
+  stroke-width: 1.5;
   outline: none;
   transition: all 0.25s ease;
   cursor: pointer;
 }
 .interactive-usa-map path:hover {
-  fill: #0c4a6e;
+  fill: var(--primary) !important;
   transform: translateY(-2px);
 }
 

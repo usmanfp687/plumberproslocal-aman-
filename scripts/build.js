@@ -7,10 +7,10 @@ console.log("🚀 Starting Chunked Production Build...");
 
 // Clean previous build directory to ensure a fresh build
 const siteDir = path.join(process.cwd(), "_site");
-if (fs.existsSync(siteDir)) {
-    console.log("🗑️  Cleaning old build files...");
-    fs.rmSync(siteDir, { recursive: true, force: true });
-}
+// if (fs.existsSync(siteDir)) {
+//     console.log("🗑️  Cleaning old build files...");
+//     fs.rmSync(siteDir, { recursive: true, force: true });
+// }
 
 // Read states from the data file
 console.log("📊 Extracting unique states from data...");
