@@ -1,0 +1,15 @@
+{
+  "name": "plumbing-local-pros",
+  "version": "1.0.0",
+  "type": "module",
+  "private": true,
+  "scripts": {
+    "build": "node scripts/build.js",
+    "dev": "node --max-old-space-size=8192 node_modules/@11ty/eleventy/cmd.cjs --serve --incremental",
+    "start": "node --max-old-space-size=8192 node_modules/@11ty/eleventy/cmd.cjs --serve"
+  },
+  "devDependencies": {
+    "@11ty/eleventy": "^3.0.0",
+    "html-minifier-terser": "^7.2.0"
+  }
+}

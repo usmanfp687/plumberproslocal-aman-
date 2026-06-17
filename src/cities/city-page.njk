@@ -1,0 +1,444 @@
+---
+layout: layout.njk
+pagination:
+  data: cities
+  size: 1
+  alias: item
+permalink: "/{{ item.state.slug }}/{{ item.city.slug }}/index.html"
+eleventyComputed:
+  title: "Plumber in {{ item.city.name }}, {{ item.state.abbr }} | {{ titleSuffix }} | {{ site.BRAND }}"
+  description: "Plumber in {{ item.city.name }}, {{ item.state.abbr }} — same day available. {{ site.BRAND }} provides emergency plumbing, drain cleaning, water heater repair & installation, pipe repair, toilet repair, faucet repair, sewer line service, leak detection & more. Call {{ site.PHONE }}."
+  canonical: "{{ site.DOMAIN }}/{{ item.state.slug }}/{{ item.city.slug }}/"
+  stateSlug: "{{ item.state.slug }}"
+  citySlug: "{{ item.city.slug }}"
+---
+
+{# ── Service Icon Map ──────────────────────────────────────────────────── #}
+{% set serviceIcons = {
+  'emergency-plumber': 'ph-siren',
+  'drain-cleaning': 'ph-funnel',
+  'water-heater-repair': 'ph-thermometer',
+  'pipe-repair-replacement': 'ph-pipe',
+  'toilet-repair-installation': 'ph-toilet',
+  'faucet-repair-installation': 'ph-faucet',
+  'sewer-line-repair': 'ph-pipe-wrench',
+  'garbage-disposal-repair': 'ph-gear',
+  'leak-detection-repair': 'ph-drop',
+  'bathroom-plumbing': 'ph-bathtub',
+  'kitchen-plumbing': 'ph-cooking-pot',
+  'water-filtration': 'ph-waves',
+  'sump-pump-services': 'ph-pump',
+  'gas-line-services': 'ph-flame',
+  'repiping-services': 'ph-arrows-counter-clockwise',
+  'hydro-jetting': 'ph-wind',
+  'commercial-plumbing': 'ph-buildings',
+  'backflow-prevention': 'ph-shield-check'
+} %}
+
+{# ── Schemas ───────────────────────────────────────────────────────────── #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "LocalBusiness",
+  "name": "Plumber in {{ item.city.name }}, {{ item.state.abbr }}",
+  "description": "Licensed plumbing services in {{ item.city.name }}, {{ item.state.name }}. Same day service for emergency plumbing, drain cleaning, water heater repair, pipe repair, toilet installation, faucet repair, sewer line service & more.",
+  "telephone": "{{ site.PHONE }}",
+  "address": {
+    "@type": "PostalAddress",
+    "addressLocality": "{{ item.city.name }}",
+    "addressRegion": "{{ item.state.abbr }}",
+    "postalCode": "{{ item.city.zip }}",
+    "addressCountry": "US"
+  },
+  "openingHoursSpecification": {
+    "@type": "OpeningHoursSpecification",
+    "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday","Saturday","Sunday"],
+    "opens": "00:00",
+    "closes": "23:59"
+  },
+  "aggregateRating": {
+    "@type": "AggregateRating",
+    "ratingValue": "{{ ratingValue }}",
+    "reviewCount": "{{ reviewCount }}",
+    "bestRating": "5"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "mainEntity": [
+    {% for faq in faqs %}
+    {
+      "@type": "Question",
+      "name": {{ faq.q | dump | safe }},
+      "acceptedAnswer": { "@type": "Answer", "text": {{ faq.a | dump | safe }} }
+    }{% if not loop.last %},{% endif %}
+    {% endfor %}
+  ]
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.DOMAIN }}/" },
+    { "@type": "ListItem", "position": 2, "name": "{{ item.state.name }}", "item": "{{ site.DOMAIN }}/{{ item.state.slug }}/" },
+    { "@type": "ListItem", "position": 3, "name": "{{ item.city.name }}", "item": "{{ site.DOMAIN }}/{{ item.state.slug }}/{{ item.city.slug }}/" }
+  ]
+}
+</script>
+
+{# ── Breadcrumb ────────────────────────────────────────────────────────── #}
+<div class="breadcrumb-bar">
+  <div class="container">
+    <div class="bc-inner">
+      <i class="ph ph-house" style="font-size:13px"></i>
+      <a href="/">Home</a>
+      <span class="bc-sep">›</span>
+      <a href="/{{ item.state.slug }}/">{{ item.state.name }}</a>
+      <span class="bc-sep">›</span>
+      <span>{{ item.city.name }}</span>
+    </div>
+  </div>
+</div>
+
+{# ── Banner ────────────────────────────────────────────────────────────── #}
+<div class="rs-banner">
+  <div class="container">
+    <div class="banner-row">
+      <div class="banner-content-col">
+        <div class="banner-content">
+          <div class="sub-label">
+            <i class="ph ph-map-pin" style="font-size:12px"></i>
+            {{ item.state.name }} Plumbing Pros
+          </div>
+          <h1 class="title">
+            Plumber in <span>{{ item.city.name }}, {{ item.state.abbr }}</span> | {{ titleSuffix }}
+          </h1>
+          <p class="description">
+            Looking for a plumber in {{ item.city.name }}, <a href="/{{ item.state.slug }}/" style="color:#0ea5e9;text-decoration:none;font-weight:600">{{ item.state.name }}</a>? Contact {{ site.BRAND }} at
+            {{ site.PHONE }} for same day plumbing service. We offer <a href="/services/emergency-plumber/" style="color:#0ea5e9;text-decoration:none;font-weight:600">emergency plumbing</a>,
+            <a href="/services/drain-cleaning/" style="color:#0ea5e9;text-decoration:none;font-weight:600">drain cleaning</a>, <a href="/services/water-heater-repair/" style="color:#0ea5e9;text-decoration:none;font-weight:600">water heater repair &amp; installation</a>, pipe repair,
+            toilet &amp; faucet repair, sewer line service, <a href="/services/leak-detection-repair/" style="color:#0ea5e9;text-decoration:none;font-weight:600">leak detection</a> &amp; more —
+            serving {{ item.city.name }}{% if item.city.county %}, {{ item.city.county }} County{% endif %} 24/7.
+          </p>
+          <div class="btn-part">
+            <a class="readon orange" href="{{ site.PHONE_HREF }}">
+              <i class="ph ph-phone-call" style="font-size:17px"></i>
+              {{ site.PHONE }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Services Grid ─────────────────────────────────────────────────────── #}
+<div class="rs-services">
+  <div class="container">
+    <h2>Professional Plumbing Services in {{ item.city.name }}, {{ item.state.abbr }}</h2>
+    <div class="services-row">
+      {% for svc in services %}
+      <div class="services-slider">
+        <div class="services-item">
+          <a href="/services/{{ svc.slug }}/" class="card-link" aria-label="{{ svc.title }} in {{ item.city.name }}"></a>
+          <div class="services-icon-bar">
+            <div class="svc-icon">
+              <i class="ph {{ serviceIcons[svc.slug] or 'ph-wrench' }}"></i>
+            </div>
+          </div>
+          <div class="services-content">
+            <h3 class="title">
+              <a href="/services/{{ svc.slug }}/">{{ svc.title }} in {{ item.city.name }}, {{ item.state.abbr }}</a>
+            </h3>
+            <p class="description">
+              Looking for {{ svc.title | lower }} in {{ item.city.name }}, {{ item.state.abbr }}? Contact {{ site.BRAND }} at
+              {{ site.PHONE }} for professional plumbing services. {{ svc.description.split('.')[0] }}.
+            </p>
+            <div class="services-btn">
+              <a href="{{ site.PHONE_HREF }}">
+                <span class="btn-text">Get Quotes</span>
+                <span class="arrow-icon">
+                  <i class="ph ph-arrow-right" style="font-size:12px"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ── Counter ───────────────────────────────────────────────────────────── #}
+<div class="rs-counter">
+  <div class="container">
+    <div class="counter-grid">
+      <div class="counter-list">
+        <div class="counter-text">
+          <div class="counter-icon">
+            <i class="ph ph-users-three" style="font-size:26px;color:#fff"></i>
+          </div>
+          <div class="counter-number">
+            <div class="count-row"><span class="rs-count">20,000</span><span class="prefix">+</span></div>
+            <h5 class="title">Licensed Plumbers</h5>
+          </div>
+        </div>
+      </div>
+      <div class="counter-list">
+        <div class="counter-text">
+          <div class="counter-icon">
+            <i class="ph ph-wrench" style="font-size:26px;color:#fff"></i>
+          </div>
+          <div class="counter-number">
+            <div class="count-row"><span class="rs-count">500,000</span><span class="prefix">+</span></div>
+            <h5 class="title">Jobs Completed</h5>
+          </div>
+        </div>
+      </div>
+      <div class="counter-list">
+        <div class="counter-text">
+          <div class="counter-icon">
+            <i class="ph ph-star" style="font-size:26px;color:#fff"></i>
+          </div>
+          <div class="counter-number">
+            <div class="count-row"><span class="rs-count">75,000</span><span class="prefix">+</span></div>
+            <h5 class="title">5 Star Reviews</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Who We Are ────────────────────────────────────────────────────────── #}
+<div class="rs-choose">
+  <div class="container">
+    <div class="choose-grid">
+      <div class="choose-img">
+        <img src="/assets/images/emergency-commercial-plumber.webp" alt="Professional plumbers in {{ item.city.name }}, {{ item.state.abbr }} equipped with top-tier tools for residential and commercial plumbing services." loading="lazy">
+      </div>
+      <div>
+        <div class="sec-title4">
+          <div class="sub-line"></div>
+          <span class="sub-text">
+            <i class="ph ph-info" style="font-size:13px"></i>
+            Who We Are
+          </span>
+          <h2>{{ item.city.name }}, {{ item.state.abbr }} Plumbing Pros</h2>
+          
+          {% if contentVariation == 0 %}
+          <p>
+            Welcome to {{ site.BRAND }}, your trusted local plumbers in {{ item.city.name }}, {{ item.state.name }}.
+            Whether you have a burst pipe, clogged drain, broken water heater, running toilet,
+            or any other plumbing emergency — our licensed plumbers arrive fast, diagnose the
+            problem, and fix it right the first time.
+          </p>
+          <p>
+            {{ localRiskText }} We offer same day plumbing service and 24/7 emergency response
+            so you never have to wait when you need a plumber most.
+          </p>
+          {% elif contentVariation == 1 %}
+          <p>
+            When you need a reliable plumber in {{ item.city.name }}, {{ site.BRAND }} is the team to call.
+            We provide fast, professional plumbing service to homeowners and businesses
+            throughout {{ item.city.name }} and the surrounding {{ item.state.name }} communities.
+          </p>
+          <p>
+            {{ localRiskText }} Our licensed plumbers use modern tools and techniques to diagnose
+            and fix any plumbing problem quickly and affordably.
+          </p>
+          {% else %}
+          <p>
+            At {{ site.BRAND }}, our licensed plumbers are dedicated to helping {{ item.city.name }}
+            residents resolve plumbing issues quickly and permanently. We handle everything
+            from a simple dripping faucet to a full sewer line replacement.
+          </p>
+          <p>
+            {{ localRiskText }} Call {{ site.PHONE }} now for a free estimate and same day service
+            in {{ item.city.name }}, {{ item.state.abbr }}.
+          </p>
+          {% endif %}
+
+          <p>
+            We serve {{ item.city.name }}{% if item.city.county %}, {{ item.city.county }} County{% endif %}, and surrounding
+            {{ item.state.name }} communities with same day and 24/7 emergency plumbing.
+          </p>
+        </div>
+        <div class="about-mini">
+          <div class="mini-card">
+            <h4><i class="ph ph-house-line" style="font-size:14px"></i> Residential</h4>
+            <p>Full plumbing services for homes and apartments in {{ item.city.name }}.</p>
+          </div>
+          <div class="mini-card">
+            <h4><i class="ph ph-buildings" style="font-size:14px"></i> Commercial</h4>
+            <p>Fast commercial plumbing to minimize business downtime in {{ item.city.name }}.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Why Choose Us ─────────────────────────────────────────────────────── #}
+<div class="rs-choose" style="background:var(--gray-bg)">
+  <div class="container">
+    <div class="choose-grid">
+      <div>
+        <div class="sec-title4">
+          <div class="sub-line"></div>
+          <span class="sub-text">
+            <i class="ph ph-shield-check" style="font-size:13px"></i>
+            Why Choose Us
+          </span>
+          <h2>Best Local Plumbers in {{ item.city.name }}</h2>
+          <p>{{ whyChooseContent.p1 }}</p>
+          <p>{{ whyChooseContent.p2 }}</p>
+          
+          {% if item.city.county %}
+          <div style="margin-top:15px;padding:12px;background:rgba(255,112,51,0.1);border-left:3px solid var(--orange);border-radius:4px">
+            <strong><i class="ph ph-warning-circle" style="margin-right:6px"></i>Safety Notice:</strong> For gas leak emergencies in <strong>{{ item.city.county }} County</strong>, evacuate immediately and call 911 before calling a plumber.
+          </div>
+          {% endif %}
+        </div>
+
+        {% if item.city.zipCodes and item.city.zipCodes.length > 0 %}
+        <div class="zip-section">
+          <h3><i class="ph ph-map-pin-line" style="font-size:15px"></i> Popular Zip Codes in {{ item.city.name }}</h3>
+          <div class="zip-wrap">
+            {% for z in item.city.zipCodes %}
+            <span class="zip-pill">{{ z }}</span>
+            {% endfor %}
+          </div>
+        </div>
+        {% elif item.city.zip %}
+        <div class="zip-section">
+          <h3><i class="ph ph-map-pin-line" style="font-size:15px"></i> Popular Zip Codes</h3>
+          <div class="zip-wrap">
+            <span class="zip-pill">{{ item.city.zip }}</span>
+          </div>
+        </div>
+        {% endif %}
+
+        <div style="margin-top:26px">
+          <a class="readon orange" href="{{ site.PHONE_HREF }}">
+            <i class="ph ph-phone-call" style="font-size:17px"></i>
+            {{ site.PHONE }}
+          </a>
+        </div>
+      </div>
+      <div class="choose-img">
+        <img src="/assets/images/bathroom-plumbing-services.webp" alt="Top-rated plumbing company in {{ item.city.name }}, {{ item.state.name }} specializing in emergency plumbing, bathrooms, and pipe repair." loading="lazy">
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Google Map ────────────────────────────────────────────────────────── #}
+<div class="rs-map">
+  <div class="container">
+    <div class="map-frame">
+      <iframe src="https://maps.google.com/maps?q={{ item.city.name | urlencode }}%2C%20{{ item.state.abbr | urlencode }}%20USA&t=&z=12&ie=UTF8&iwloc=&output=embed" width="100%" height="360" style="border:0;display:block" allowfullscreen loading="lazy" referrerpolicy="no-referrer-when-downgrade" title="Map of {{ item.city.name }}, {{ item.state.abbr }}"></iframe>
+    </div>
+  </div>
+</div>
+
+{# ── FAQ ───────────────────────────────────────────────────────────────── #}
+<div class="rs-faq">
+  <div class="container">
+    <h2 class="faq-inner-title">
+      <i class="ph ph-chat-circle-dots" style="font-size:26px;color:var(--primary);margin-right:8px;vertical-align:middle"></i>
+      Frequently Asked Questions About Plumbers in {{ item.city.name }}, {{ item.state.abbr }}
+    </h2>
+    <div class="faq-grid">
+      <div class="faq-img">
+        <img src="/assets/images/pipe-leak-repair-plumbing.webp" alt="Frequently asked plumbing questions in {{ item.city.name }}. Licensed plumbing contractors answering your pipe, leak, and repair questions." loading="lazy">
+      </div>
+      <div class="accordion" itemscope itemtype="https://schema.org/FAQPage">
+        {% for faq in faqs %}
+        <div class="acc-item" itemscope itemprop="mainEntity" itemtype="https://schema.org/Question">
+          <button class="acc-question" itemprop="name" aria-expanded="{{ 'true' if loop.first else 'false' }}">
+            {{ faq.q }}
+            <span class="acc-icon">+</span>
+          </button>
+          <div class="acc-answer" itemscope itemprop="acceptedAnswer" itemtype="https://schema.org/Answer">
+            <p itemprop="text">{{ faq.a }}</p>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Testimonials ──────────────────────────────────────────────────────── #}
+<div class="rs-testimonial">
+  <div class="container">
+    <div class="sec-inner-title">
+      <span class="sub-text">
+        <i class="ph ph-star" style="font-size:13px"></i>
+        Testimonials
+      </span>
+      <h2>What Our Clients Say About Us in {{ item.city.name }}</h2>
+    </div>
+    <div class="testi-grid">
+      {% for t in testimonials %}
+      <div class="testi-item">
+        <div class="testi-stars">★★★★★</div>
+        <p>"{{ t.text }}"</p>
+        <div class="testi-author">
+          <i class="ph ph-user-circle" style="font-size:14px;margin-right:4px"></i>
+          {{ t.author }}
+        </div>
+        <div class="testi-loc">{{ item.city.name }}, {{ item.state.abbr }}</div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ── Nearby Cities ─────────────────────────────────────────────────────── #}
+{% if nearbyCities and nearbyCities.length > 0 %}
+<div class="nearby-section">
+  <div class="container">
+    <a href="/{{ item.state.slug }}/" style="text-decoration:none">
+      <h3>
+        <i class="ph ph-map-trifold" style="font-size:18px;color:var(--primary)"></i>
+        Find a Plumber in {{ item.state.name }} Cities
+      </h3>
+    </a>
+    <div class="nearby-links">
+      {% for nc in nearbyCities %}
+      <a href="/{{ item.state.slug }}/{{ nc.slug }}/" class="nearby-link">{{ nc.name }}</a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+{% endif %}
+
+{# ── CTA ───────────────────────────────────────────────────────────────── #}
+<div class="cta-strip">
+  <div class="container">
+    <h2>Need a Plumber in {{ item.city.name }}, {{ item.state.abbr }}?</h2>
+    <p>Our licensed plumbers are available same day and respond to emergencies 24/7.</p>
+    <a class="readon orange" href="{{ site.PHONE_HREF }}">
+      <i class="ph ph-phone-call" style="font-size:18px"></i>
+      {{ site.PHONE }} — Free Estimate
+    </a>
+  </div>
+</div>
+
+<script>
+  localStorage.setItem('userLoc', JSON.stringify({
+    stateName: "{{ item.state.name }}",
+    stateAbbr: "{{ item.state.abbr }}",
+    stateSlug: "{{ item.state.slug }}",
+    cityName: "{{ item.city.name }}",
+    citySlug: "{{ item.city.slug }}"
+  }));
+</script>

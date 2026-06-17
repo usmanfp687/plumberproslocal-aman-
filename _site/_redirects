@@ -1,0 +1,5 @@
+# Force HTTPS (Cloudflare handles this automatically, but good to have)
+# www to non-www redirect is handled in Cloudflare dashboard
+
+# 404 fallback - catch anything not found
+/*    /404.html   404

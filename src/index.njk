@@ -1,0 +1,217 @@
+---
+layout: layout.njk
+title: "Expert Plumbers Near You | Same Day Service | Plumbing Local Pros"
+description: "Expert plumbers near you — same day service available. Plumbing Local Pros provides emergency plumbing, drain cleaning, water heater repair & installation, pipe repair, toilet repair & installation, faucet repair & installation, sewer line repair, garbage disposal repair, leak detection, bathroom & kitchen plumbing, water filtration, sump pump, gas line services, hydro jetting, repiping & more. Call (877) 710-2942."
+canonical: "https://www.plumbinglocalpros.com/"
+---
+
+{# ── JSON-LD Schemas ────────────────────────────────────────────────────── #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "WebSite",
+  "name": "{{ site.BRAND }}",
+  "url": "{{ site.DOMAIN }}/",
+  "potentialAction": {
+    "@type": "SearchAction",
+    "target": "{{ site.DOMAIN }}/search?q={search_term_string}",
+    "query-input": "required name=search_term_string"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "{{ site.BRAND }}",
+  "url": "{{ site.DOMAIN }}/",
+  "logo": "{{ site.DOMAIN }}/favicon.svg",
+  "contactPoint": {
+    "@type": "ContactPoint",
+    "telephone": "{{ site.PHONE }}",
+    "contactType": "customer service",
+    "areaServed": "US",
+    "availableLanguage": "en"
+  }
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.DOMAIN }}/" }
+  ]
+}
+</script>
+
+{# ── Service Icon Map ──────────────────────────────────────────────────── #}
+{% set serviceIcons = {
+  'emergency-plumber': 'ph-siren',
+  'drain-cleaning': 'ph-funnel',
+  'water-heater-repair': 'ph-thermometer',
+  'pipe-repair-replacement': 'ph-pipe',
+  'toilet-repair-installation': 'ph-toilet',
+  'faucet-repair-installation': 'ph-faucet',
+  'sewer-line-repair': 'ph-pipe-wrench',
+  'garbage-disposal-repair': 'ph-gear',
+  'leak-detection-repair': 'ph-drop',
+  'bathroom-plumbing': 'ph-bathtub',
+  'kitchen-plumbing': 'ph-cooking-pot',
+  'water-filtration': 'ph-waves',
+  'sump-pump-services': 'ph-pump',
+  'gas-line-services': 'ph-flame',
+  'repiping-services': 'ph-arrows-counter-clockwise',
+  'hydro-jetting': 'ph-wind',
+  'commercial-plumbing': 'ph-buildings',
+  'backflow-prevention': 'ph-shield-check'
+} %}
+
+{# ── Banner ────────────────────────────────────────────────────────────── #}
+<div class="rs-banner">
+  <div class="container">
+    <div class="banner-row">
+      <div class="banner-content-col">
+        <div class="banner-content">
+          <div class="sub-label">
+            <i class="ph ph-map-pin" style="font-size:12px"></i>
+            Plumbing Local Pros
+          </div>
+          <h1 class="title">
+            Expert Plumbers <span>Near You</span>
+          </h1>
+          <p class="description">
+            {{ site.BRAND }} connects you with expert licensed local plumbers across the USA.
+            Same day service for emergency plumbing, drain cleaning, water heater
+            repair &amp; installation, pipe repair &amp; replacement, toilet repair &amp;
+            installation, faucet repair, sewer line repair, garbage disposal,
+            leak detection, bathroom &amp; kitchen plumbing, water filtration, sump
+            pump, gas lines, hydro jetting &amp; repiping. Call 24/7.
+          </p>
+          <div class="btn-part">
+            <a class="readon orange" href="{{ site.PHONE_HREF }}">
+              <i class="ph ph-phone-call" style="font-size:17px"></i>
+              {{ site.PHONE }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Counter ───────────────────────────────────────────────────────────── #}
+<div class="rs-counter">
+  <div class="container">
+    <div class="counter-grid">
+      <div class="counter-list">
+        <div class="counter-text">
+          <div class="counter-icon"><i class="ph ph-users-three" style="font-size:26px;color:#fff"></i></div>
+          <div class="counter-number">
+            <div class="count-row"><span class="rs-count">20,000</span><span class="prefix">+</span></div>
+            <h5 class="title">Licensed Plumbers</h5>
+          </div>
+        </div>
+      </div>
+      <div class="counter-list">
+        <div class="counter-text">
+          <div class="counter-icon"><i class="ph ph-wrench" style="font-size:26px;color:#fff"></i></div>
+          <div class="counter-number">
+            <div class="count-row"><span class="rs-count">500,000</span><span class="prefix">+</span></div>
+            <h5 class="title">Jobs Completed</h5>
+          </div>
+        </div>
+      </div>
+      <div class="counter-list">
+        <div class="counter-text">
+          <div class="counter-icon"><i class="ph ph-star" style="font-size:26px;color:#fff"></i></div>
+          <div class="counter-number">
+            <div class="count-row"><span class="rs-count">75,000</span><span class="prefix">+</span></div>
+            <h5 class="title">5 Star Reviews</h5>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Services Grid ─────────────────────────────────────────────────────── #}
+<div class="rs-services">
+  <div class="container">
+    <h2>Professional Local Plumbing Services Near You</h2>
+    <div class="services-row">
+      {% for svc in services %}
+      <div class="services-slider">
+        <div class="services-item">
+          <a href="/services/{{ svc.slug }}/" class="card-link" aria-label="View {{ svc.title }}"></a>
+          <div class="services-icon-bar">
+            <div class="svc-icon">
+              <i class="ph {{ serviceIcons[svc.slug] or 'ph-wrench' }}"></i>
+            </div>
+          </div>
+          <div class="services-content">
+            <h3 class="title">
+              <a href="/services/{{ svc.slug }}/">{{ svc.title }} Near You</a>
+            </h3>
+            <p class="description">
+              Looking for {{ svc.title | lower }} near you? Contact {{ site.BRAND }} at
+              {{ site.PHONE }} for professional services. {{ svc.description.split('.')[0] }}.
+            </p>
+            <div class="services-btn">
+              <a href="{{ site.PHONE_HREF }}">
+                <span class="btn-text">Get Quotes</span>
+                <span class="arrow-icon">
+                  <i class="ph ph-arrow-right" style="font-size:12px"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ── States / USA Map ──────────────────────────────────────────────────── #}
+<div class="rs-addon-services">
+  <div class="container">
+    <h2>
+      <i class="ph ph-map-trifold" style="font-size:28px;color:var(--primary);margin-right:8px;vertical-align:middle"></i>
+      Local Plumbers Available Nationwide
+    </h2>
+
+    <div class="interactive-usa-map">
+      <img src="/assets/images/usa-map-bg.png" alt="Nationwide plumbing service coverage across all 50 US states" style="width:100%;height:auto;border-radius:8px;opacity:0.9;">
+    </div>
+
+    <div class="addon-row">
+      {% for st in states %}
+      <a href="/{{ st.slug }}/" class="addon-item" style="text-decoration:none">
+        <div class="services-text">
+          <div class="services-title">
+            <i class="ph ph-map-pin" style="font-size:13px;color:var(--primary);flex-shrink:0"></i>
+            <h3>{{ st.name }}</h3>
+          </div>
+          <div class="location-meta">
+            <i class="ph ph-buildings" style="font-size:11px"></i>
+            {{ st.abbr }} · {{ st.cities.length }} cities
+          </div>
+        </div>
+      </a>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ── CTA Strip ─────────────────────────────────────────────────────────── #}
+<div class="cta-strip">
+  <div class="container">
+    <h2>Need a Plumber Today? Call Now — Same Day Service</h2>
+    <p>Our licensed local plumbers are standing by for same day and emergency service.</p>
+    <a class="readon orange" href="{{ site.PHONE_HREF }}">
+      <i class="ph ph-phone-call" style="font-size:18px"></i>
+      {{ site.PHONE }} — Free Estimate
+    </a>
+  </div>
+</div>

@@ -1,0 +1,183 @@
+---
+layout: layout.njk
+title: "Professional Plumbing Services Near You | Plumbing Local Pros"
+description: "Looking for plumbing services near you? We offer emergency plumbing, drain cleaning, water heater repair, pipe repair, toilet & faucet installation, sewer line service, leak detection & more."
+canonical: "https://www.plumbinglocalpros.com/services/"
+permalink: "services/index.html"
+---
+
+{# ── Service Icon Map ──────────────────────────────────────────────────── #}
+{% set serviceIcons = {
+  'emergency-plumber': 'ph-siren',
+  'drain-cleaning': 'ph-funnel',
+  'water-heater-repair': 'ph-thermometer',
+  'pipe-repair-replacement': 'ph-pipe',
+  'toilet-repair-installation': 'ph-toilet',
+  'faucet-repair-installation': 'ph-faucet',
+  'sewer-line-repair': 'ph-pipe-wrench',
+  'garbage-disposal-repair': 'ph-gear',
+  'leak-detection-repair': 'ph-drop',
+  'bathroom-plumbing': 'ph-bathtub',
+  'kitchen-plumbing': 'ph-cooking-pot',
+  'water-filtration': 'ph-waves',
+  'sump-pump-services': 'ph-pump',
+  'gas-line-services': 'ph-flame',
+  'repiping-services': 'ph-arrows-counter-clockwise',
+  'hydro-jetting': 'ph-wind',
+  'commercial-plumbing': 'ph-buildings',
+  'backflow-prevention': 'ph-shield-check'
+} %}
+
+{# ── Breadcrumb ────────────────────────────────────────────────────────── #}
+<div class="breadcrumb-bar">
+  <div class="container">
+    <div class="bc-inner" id="svcBreadcrumb">
+      <i class="ph ph-house" style="font-size:13px"></i>
+      <a href="/">Home</a>
+      <span class="bc-sep">›</span>
+      <span>Our Services</span>
+    </div>
+  </div>
+</div>
+
+{# ── Banner ────────────────────────────────────────────────────────────── #}
+<div class="rs-banner">
+  <div class="container">
+    <div class="banner-row">
+      <div class="banner-content-col">
+        <div class="banner-content">
+          <div class="sub-label">
+            <i class="ph ph-map-pin" style="font-size:12px"></i>
+            Our Services
+          </div>
+          <h1 class="title">
+            Plumbing Services <span id="svcLocationSpan">Near You</span>
+          </h1>
+          <p class="description" id="svcBannerDesc">
+            Find reliable and licensed local plumbers near you. Same day service available — call us 24/7 for emergency
+            plumbing, drain cleaning, water heater repair, pipe repair &amp; more.
+          </p>
+          <div class="btn-part">
+            <a class="readon orange" href="{{ site.PHONE_HREF }}">
+              <i class="ph ph-phone-call" style="font-size:17px"></i>
+              {{ site.PHONE }}
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Services Grid ─────────────────────────────────────────────────────── #}
+<div class="rs-services">
+  <div class="container">
+    <h2>Our Specialized Plumbing Services <span class="js-loc-h2">Near You</span></h2>
+    <div class="services-row">
+      {% for svc in services %}
+      <div class="services-slider">
+        <div class="services-item">
+          <a href="/services/{{ svc.slug }}/" class="card-link js-svc-link" data-slug="{{ svc.slug }}" aria-label="{{ svc.title }} Near You"></a>
+          <div class="services-icon-bar">
+            <div class="svc-icon">
+              <i class="ph {{ serviceIcons[svc.slug] or 'ph-wrench' }}"></i>
+            </div>
+          </div>
+          <div class="services-content">
+            <h3 class="title">
+              <a href="/services/{{ svc.slug }}/" class="js-svc-link" data-slug="{{ svc.slug }}">
+                {{ svc.title }} <span class="js-loc-inline">Near You</span>
+              </a>
+            </h3>
+            <p class="description">
+              Looking for {{ svc.title | lower }} <span class="js-loc-inline-lower">near you</span>? Contact {{ site.BRAND }} at {{ site.PHONE }} for professional plumbing services. {{ svc.description.split('.')[0] }}.
+            </p>
+            <div class="services-btn">
+              <a href="{{ site.PHONE_HREF }}">
+                <span class="btn-text">Get Quotes</span>
+                <span class="arrow-icon">
+                  <i class="ph ph-arrow-right" style="font-size:12px"></i>
+                </span>
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+      {% endfor %}
+    </div>
+  </div>
+</div>
+
+{# ── CTA Strip ─────────────────────────────────────────────────────────── #}
+<div class="cta-strip">
+  <div class="container">
+    <h2 id="svcCtaH2">Need a Plumber Near You?</h2>
+    <p>Our licensed plumbers are standing by for same day and 24/7 emergency service.</p>
+    <a class="readon orange" href="{{ site.PHONE_HREF }}">
+      <i class="ph ph-phone-call" style="font-size:18px"></i>
+      {{ site.PHONE }} — Call Now
+    </a>
+  </div>
+</div>
+
+{# ── Client-Side Location Detection ───────────────────────────────────── #}
+<script>
+(function () {
+  var userLocStr = localStorage.getItem('userLoc');
+  if (!userLocStr) return;
+
+  var loc;
+  try {
+    loc = JSON.parse(userLocStr);
+  } catch(e) {
+    return;
+  }
+
+  var locText = 'in ' + loc.stateName;
+  var locLower = locText.toLowerCase();
+  
+  if (loc.cityName) {
+    locText = 'in ' + loc.cityName + ', ' + loc.stateAbbr;
+    locLower = locText.toLowerCase();
+  }
+
+  // Update h1 span
+  var locSpan = document.getElementById('svcLocationSpan');
+  if (locSpan) locSpan.textContent = locText;
+
+  // Update banner description
+  var desc = document.getElementById('svcBannerDesc');
+  if (desc) {
+    desc.textContent = loc.cityName
+      ? 'Professional plumbing services in ' + loc.cityName + ', ' + loc.stateName + '. Same day service available — call us 24/7 for emergency plumbing, drain cleaning, water heater repair, pipe repair & more.'
+      : 'Your trusted local plumbing services in ' + loc.stateName + '. Same day service available — call us 24/7 for emergency plumbing, drain cleaning, water heater repair, pipe repair & more.';
+  }
+
+  // Update inline location spans
+  document.querySelectorAll('.js-loc-inline').forEach(function (el) { el.textContent = locText; });
+  document.querySelectorAll('.js-loc-inline-lower').forEach(function (el) { el.textContent = locLower; });
+  document.querySelectorAll('.js-loc-h2').forEach(function (el) { el.textContent = locText; });
+
+  // Update CTA h2
+  var ctaH2 = document.getElementById('svcCtaH2');
+  if (ctaH2) ctaH2.textContent = 'Need a Plumber ' + locText + '?';
+
+  // Update service card links (keep clean URL)
+  document.querySelectorAll('a.js-svc-link').forEach(function (el) {
+    var slug = el.getAttribute('data-slug');
+    if (slug) el.setAttribute('href', '/services/' + slug + '/');
+  });
+
+  // Update document title
+  document.title = 'Professional Plumbing Services ' + locText + ' | {{ site.BRAND }}';
+
+  // Build breadcrumb
+  var bc = document.getElementById('svcBreadcrumb');
+  if (bc) {
+    var extra = '';
+    if (loc.stateSlug) extra += '<span class="bc-sep">›</span><a href="/' + loc.stateSlug + '/">' + loc.stateName + '</a>';
+    if (loc.citySlug) extra += '<span class="bc-sep">›</span><a href="/' + loc.stateSlug + '/' + loc.citySlug + '/">' + loc.cityName + '</a>';
+    bc.innerHTML = '<i class="ph ph-house" style="font-size:13px"></i><a href="/">Home</a>' + extra + '<span class="bc-sep">›</span><span>Our Services</span>';
+  }
+})();
+</script>

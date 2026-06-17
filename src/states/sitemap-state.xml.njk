@@ -1,0 +1,24 @@
+---
+pagination:
+  data: states
+  size: 1
+  alias: state
+permalink: /sitemap-{{ state.slug }}.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <!-- State Page -->
+  <url>
+    <loc>{{ site.DOMAIN }}/{{ state.slug }}/</loc>
+    <priority>0.8</priority>
+  </url>
+  
+  <!-- City Pages -->
+  {% for city in state.cities %}
+  <url>
+    <loc>{{ site.DOMAIN }}/{{ state.slug }}/{{ city.slug }}/</loc>
+    <priority>0.6</priority>
+  </url>
+  {% endfor %}
+</urlset>

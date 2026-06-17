@@ -1,0 +1,15 @@
+---
+permalink: /sitemap.xml
+eleventyExcludeFromCollections: true
+---
+<?xml version="1.0" encoding="UTF-8"?>
+<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
+  <sitemap>
+    <loc>{{ site.DOMAIN }}/sitemap-core.xml</loc>
+  </sitemap>
+  {% for state in states %}
+  <sitemap>
+    <loc>{{ site.DOMAIN }}/sitemap-{{ state.slug }}.xml</loc>
+  </sitemap>
+  {% endfor %}
+</sitemapindex>
