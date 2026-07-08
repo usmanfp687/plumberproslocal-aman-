@@ -1,4 +1,21 @@
 module.exports = function (eleventyConfig) {
+  // --- CLOUDFLARE OPTIMIZATION: Quiet Mode & Progress Tracker ---
+  eleventyConfig.setQuietMode(true);
+
+  let pageCounter = 0;
+  eleventyConfig.on("eleventy.before", () => {
+      pageCounter = 0;
+  });
+
+  eleventyConfig.addTransform("progressTracker", function(content) {
+      pageCounter++;
+      // Print a heartbeat to the terminal every 1,000 pages to prevent Cloudflare timeout
+      if (pageCounter % 1000 === 0) {
+          console.log(`[Heartbeat] Rendered ${pageCounter.toLocaleString()} pages...`);
+      }
+      return content;
+  });
+  // --------------------------------------------------------------
   // ── Passthrough copies ──────────────────────────────────────────────────
   if (process.env.BUILD_TYPE !== 'state') {
     // Copy contents of public/ folder to root of _site/
