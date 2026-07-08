@@ -9,7 +9,7 @@ https.get('https://unpkg.com/react-usa-map@1.5.0/src/data/usa-map-dimensions.js'
   res.on('end', () => {
     let js = data.replace('export default data;', 'module.exports = data;');
     fs.writeFileSync('./scripts/temp.cjs', js);
-    const mapData = require('./temp.cjs');
+    const mapData = require('./temp.cjs')();
     let paths = '';
     for (let state in mapData) {
       paths += `<path class="${state} state" data-name="${state}" fill="#E2E8F0" stroke="#FFFFFF" stroke-width="1.5" d="${mapData[state].dimensions}" />\n`;

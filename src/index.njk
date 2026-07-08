@@ -1,8 +1,7 @@
 ---
 layout: layout.njk
-title: "Expert Plumbers Near You | Same Day Service | Plumbing Local Pros"
-description: "Expert plumbers near you — same day service available. Plumbing Local Pros provides emergency plumbing, drain cleaning, water heater repair & installation, pipe repair, toilet repair & installation, faucet repair & installation, sewer line repair, garbage disposal repair, leak detection, bathroom & kitchen plumbing, water filtration, sump pump, gas line services, hydro jetting, repiping & more. Call (877) 765-9415."
-canonical: "https://www.plumbinglocalpros.com/"
+title: "Expert Local Electricians Near You | 24/7 Emergency Repairs"
+description: "Need a local electrician? We provide 24/7 emergency electrical services, panel upgrades, and complete home rewiring. Call our licensed experts today!"
 ---
 
 {# ── JSON-LD Schemas ────────────────────────────────────────────────────── #}
@@ -22,9 +21,12 @@ canonical: "https://www.plumbinglocalpros.com/"
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Organization",
+  "@type": "Electrician",
   "name": "{{ site.BRAND }}",
   "url": "{{ site.DOMAIN }}/",
+  "image": "{{ site.DOMAIN }}/favicon.svg",
+  "telephone": "{{ site.PHONE }}",
+  "priceRange": "$$",
   "logo": "{{ site.DOMAIN }}/favicon.svg",
   "contactPoint": {
     "@type": "ContactPoint",
@@ -47,23 +49,23 @@ canonical: "https://www.plumbinglocalpros.com/"
 
 {# ── Service Icon Map ──────────────────────────────────────────────────── #}
 {% set serviceIcons = {
-  'emergency-plumber': 'ph-siren',
-  'drain-cleaning': 'ph-funnel',
+  'emergency-electrician': 'ph-siren',
+  'wiring-rewiring': 'ph-lightbulb',
   'water-heater-repair': 'ph-thermometer',
-  'pipe-repair-replacement': 'ph-pipe',
-  'toilet-repair-installation': 'ph-toilet',
-  'faucet-repair-installation': 'ph-faucet',
-  'sewer-line-repair': 'ph-pipe-wrench',
+  'electrical-panel-upgrade': 'ph-circuit-board',
+  'switch-repair-installation': 'ph-switch',
+  'fixture-repair-installation': 'ph-fixture',
+  'outlet-switch-installation': 'ph-plug',
   'garbage-disposal-repair': 'ph-gear',
   'leak-detection-repair': 'ph-drop',
-  'bathroom-plumbing': 'ph-bathtub',
-  'kitchen-plumbing': 'ph-cooking-pot',
+  'bathroom-electrical': 'ph-bathtub',
+  'kitchen-electrical': 'ph-cooking-pot',
   'water-filtration': 'ph-waves',
   'sump-pump-services': 'ph-pump',
   'gas-line-services': 'ph-flame',
   'repiping-services': 'ph-arrows-counter-clockwise',
-  'hydro-jetting': 'ph-wind',
-  'commercial-plumbing': 'ph-buildings',
+  'circuit-breaker-repair': 'ph-wind',
+  'commercial-electrical': 'ph-buildings',
   'backflow-prevention': 'ph-shield-check'
 } %}
 
@@ -75,18 +77,17 @@ canonical: "https://www.plumbinglocalpros.com/"
         <div class="banner-content">
           <div class="sub-label">
             <i class="ph ph-map-pin" style="font-size:12px"></i>
-            Plumbing Local Pros
+            Local Electrician Emergency
           </div>
           <h1 class="title">
-            Expert Plumbers <span>Near You</span>
+            Expert Electricians <span>Near You</span>
           </h1>
           <p class="description">
-            {{ site.BRAND }} connects you with expert licensed local plumbers across the USA.
-            Same day service for emergency plumbing, drain cleaning, water heater
-            repair &amp; installation, pipe repair &amp; replacement, toilet repair &amp;
-            installation, faucet repair, sewer line repair, garbage disposal,
-            leak detection, bathroom &amp; kitchen plumbing, water filtration, sump
-            pump, gas lines, hydro jetting &amp; repiping. Call 24/7.
+            {{ site.BRAND }} connects you with expert licensed local electricians across the USA.
+            Same day service for emergency electrical, wiring upgrade, panel
+            repair &amp; installation, outlet repair &amp; replacement, switch repair &amp;
+            installation, fixture repair, circuit breaker repair, fault detection, 
+            bathroom &amp; kitchen electrical, and complete home rewiring. Call 24/7.
           </p>
           <div class="btn-part">
             <a class="readon orange" href="{{ site.PHONE_HREF }}">
@@ -96,9 +97,14 @@ canonical: "https://www.plumbinglocalpros.com/"
           </div>
         </div>
       </div>
+      <div class="banner-img-box">
+        <img src="/assets/images/global-hero.webp" alt="Professional electrician at work">
+      </div>
     </div>
   </div>
 </div>
+
+
 
 {# ── Counter ───────────────────────────────────────────────────────────── #}
 <div class="rs-counter">
@@ -106,16 +112,7 @@ canonical: "https://www.plumbinglocalpros.com/"
     <div class="counter-grid">
       <div class="counter-list">
         <div class="counter-text">
-          <div class="counter-icon"><i class="ph ph-users-three" style="font-size:26px;color:#fff"></i></div>
-          <div class="counter-number">
-            <div class="count-row"><span class="rs-count">20,000</span><span class="prefix">+</span></div>
-            <h5 class="title">Licensed Plumbers</h5>
-          </div>
-        </div>
-      </div>
-      <div class="counter-list">
-        <div class="counter-text">
-          <div class="counter-icon"><i class="ph ph-wrench" style="font-size:26px;color:#fff"></i></div>
+          <div class="counter-icon"><i class="ph ph-lightning" style="font-size:26px;color:#fff"></i></div>
           <div class="counter-number">
             <div class="count-row"><span class="rs-count">500,000</span><span class="prefix">+</span></div>
             <h5 class="title">Jobs Completed</h5>
@@ -126,8 +123,17 @@ canonical: "https://www.plumbinglocalpros.com/"
         <div class="counter-text">
           <div class="counter-icon"><i class="ph ph-star" style="font-size:26px;color:#fff"></i></div>
           <div class="counter-number">
-            <div class="count-row"><span class="rs-count">75,000</span><span class="prefix">+</span></div>
-            <h5 class="title">5 Star Reviews</h5>
+            <div class="count-row"><span class="rs-count">4.9</span><span class="prefix">★</span></div>
+            <h5 class="title">Average Rating</h5>
+          </div>
+        </div>
+      </div>
+      <div class="counter-list">
+        <div class="counter-text">
+          <div class="counter-icon"><i class="ph ph-clock" style="font-size:26px;color:#fff"></i></div>
+          <div class="counter-number">
+            <div class="count-row"><span class="rs-count">24</span><span class="prefix">/7</span></div>
+            <h5 class="title">Same Day Service</h5>
           </div>
         </div>
       </div>
@@ -138,15 +144,21 @@ canonical: "https://www.plumbinglocalpros.com/"
 {# ── Services Grid ─────────────────────────────────────────────────────── #}
 <div class="rs-services">
   <div class="container">
-    <h2>Professional Local Plumbing Services Near You</h2>
+    <h2>Professional Local Electrical Services Near You</h2>
     <div class="services-row">
       {% for svc in services %}
       <div class="services-slider">
         <div class="services-item">
           <a href="/services/{{ svc.slug }}/" class="card-link" aria-label="View {{ svc.title }}"></a>
+          
+          {% if svc.image %}
+          <div class="services-card-img">
+            <img src="/assets/images/{{ svc.image }}" alt="{{ svc.title }}" loading="lazy">
+          </div>
+          {% endif %}
           <div class="services-icon-bar">
             <div class="svc-icon">
-              <i class="ph {{ serviceIcons[svc.slug] or 'ph-wrench' }}"></i>
+              <i class="ph {{ serviceIcons[svc.slug] or 'ph-lightning' }}"></i>
             </div>
           </div>
           <div class="services-content">
@@ -178,7 +190,7 @@ canonical: "https://www.plumbinglocalpros.com/"
   <div class="container">
     <h2>
       <i class="ph ph-map-trifold" style="font-size:28px;color:var(--primary);margin-right:8px;vertical-align:middle"></i>
-      Local Plumbers Available Nationwide
+      Local Electricians Available Nationwide
     </h2>
 
     <div class="interactive-usa-map">
@@ -207,8 +219,8 @@ canonical: "https://www.plumbinglocalpros.com/"
 {# ── CTA Strip ─────────────────────────────────────────────────────────── #}
 <div class="cta-strip">
   <div class="container">
-    <h2>Need a Plumber Today? Call Now — Same Day Service</h2>
-    <p>Our licensed local plumbers are standing by for same day and emergency service.</p>
+    <h2>Need a Electrician Today? Call Now — Same Day Service</h2>
+    <p>Our licensed local electricians are standing by for same day and emergency service.</p>
     <a class="readon orange" href="{{ site.PHONE_HREF }}">
       <i class="ph ph-phone-call" style="font-size:18px"></i>
       {{ site.PHONE }} — Free Estimate

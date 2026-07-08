@@ -1,5 +1,5 @@
 {
-  "name": "plumbing-local-pros",
+  "name": "local-electrician-emergency",
   "version": "1.0.0",
   "type": "module",
   "private": true,
@@ -10,6 +10,7 @@
   },
   "devDependencies": {
     "@11ty/eleventy": "^3.0.0",
-    "html-minifier-terser": "^7.2.0"
+    "html-minifier-terser": "^7.2.0",
+    "sharp": "^0.35.3"
   }
 }

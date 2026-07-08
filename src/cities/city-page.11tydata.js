@@ -2,6 +2,7 @@ import statesData from '../../data/states.js';
 import { getFaqsPool } from '../../data/faqsPool.js';
 import { getTestimonialsPool } from '../../data/testimonialsPool.js';
 import { getWhyChoosePool } from '../../data/whyChoosePool.js';
+import { getWhoWeArePool } from '../../data/whoWeArePool.js';
 
 function getSeededRandom(seedString) {
   let seed = 0;
@@ -26,6 +27,45 @@ function shuffleArray(array, randomFunc) {
 
 export default {
   eleventyComputed: {
+    metaTitle: (data) => {
+      const city = data.item.city.name;
+      const state = data.item.state.abbr;
+      const rand = getSeededRandom(`${data.item.city.slug}-${data.item.state.slug}`);
+      const variation = Math.floor(rand() * 3);
+      
+      const titles = [
+        `Expert Electrician in ${city}, ${state} | 24/7 Fast & Local Repair`,
+        `Top Rated Electrician in ${city}, ${state} | Reliable Same Day`,
+        `Best Local Electrician ${city}, ${state} | Emergency Repair Service`
+      ];
+      return titles[variation];
+    },
+    metaDesc: (data) => {
+      const city = data.item.city.name;
+      const state = data.item.state.abbr;
+      const rand = getSeededRandom(`${data.item.city.slug}-${data.item.state.slug}`);
+      const variation = Math.floor(rand() * 3);
+      
+      const descs = [
+        `Searching for a trusted electrician in ${city}, ${state}? We offer 24/7 emergency electrical repairs, panel upgrades, and home wiring. Call our team today!`,
+        `Need an affordable electrician in ${city}, ${state}? Our highly skilled experts deliver guaranteed same-day electrical services, circuit troubleshooting & repairs.`,
+        `Hire the best local electrician in ${city}, ${state}. We specialize in reliable home wiring, rapid emergency power restoration, and circuit breaker installations.`
+      ];
+      return descs[variation];
+    },
+    h1Title: (data) => {
+      const city = data.item.city.name;
+      const state = data.item.state.abbr;
+      const rand = getSeededRandom(`${data.item.city.slug}-${data.item.state.slug}`);
+      const variation = Math.floor(rand() * 3);
+      
+      const h1s = [
+        `Expert Electrician in ${city}, ${state}`,
+        `Top Rated Electricians in ${city}, ${state}`,
+        `Local Emergency Electrician in ${city}, ${state}`
+      ];
+      return h1s[variation];
+    },
     nearbyCities: (data) => {
       const stateObj = statesData.find(s => s.slug === data.item.state.slug);
       if (!stateObj) return [];
@@ -36,7 +76,7 @@ export default {
       const state = data.item.state;
       const rand = getSeededRandom(`${city.slug}-${state.slug}`);
       const allFaqs = getFaqsPool(city, state, data.site.BRAND, data.site.PHONE);
-      return shuffleArray(allFaqs, rand).slice(0, 5);
+      return shuffleArray(allFaqs, rand).slice(0, 10);
     },
     testimonials: (data) => {
       const city = data.item.city;
@@ -51,6 +91,13 @@ export default {
       const rand = getSeededRandom(`${city.slug}-${state.slug}`);
       const allWhyChoose = getWhyChoosePool(city, state, data.site.BRAND);
       return allWhyChoose[Math.floor(rand() * allWhyChoose.length)];
+    },
+    whoWeAreContent: (data) => {
+      const city = data.item.city;
+      const state = data.item.state;
+      const rand = getSeededRandom(`${city.slug}-${state.slug}`);
+      const allWhoWeAre = getWhoWeArePool(city, state, data.site.BRAND);
+      return allWhoWeAre[Math.floor(rand() * allWhoWeAre.length)];
     },
     contentVariation: (data) => {
       const city = data.item.city;
@@ -70,13 +117,13 @@ export default {
     localRiskText: (data) => {
       const city = data.item.city;
       const state = data.item.state;
-      let text = `${city.name} homeowners and businesses can rely on our licensed local plumbers for all plumbing needs — from emergency repairs to routine maintenance and installations.`;
+      let text = `${city.name} homeowners and businesses can rely on our licensed local electricians for all electrical needs ?" from emergency repairs to routine maintenance and installations.`;
       const coldStates = ['WI','MN','MI','NY','IL','ND','SD','OH','PA','ME','VT','NH','IA','MA','MT','WY','CO','ID'];
       const hotStates = ['FL','TX','AZ','NV','NM'];
       if (coldStates.includes(state.abbr)) {
-        text = `During freezing winter months, ${city.name} homes are especially vulnerable to frozen and burst pipes. Our plumbers respond fast with emergency pipe thawing, repair, and prevention to protect your home.`;
+        text = `During severe winter storms and blizzards, ${city.name} homes are especially vulnerable to massive grid failures and deadly power outages. Our electricians respond fast with emergency generator installations, panel heavy-ups, and severe weather fault repairs to protect your family.`;
       } else if (hotStates.includes(state.abbr)) {
-        text = `${city.name}'s heat and hard water conditions can accelerate pipe corrosion and water heater wear. Our plumbers are experienced with the unique plumbing challenges in this climate and deliver lasting solutions.`;
+        text = `${city.name}'s extreme summer heat forces air conditioning units to run continuously, placing immense strain on aging electrical panels. Our master electricians are experts at balancing loads, upgrading overloaded circuits, and preventing catastrophic panel meltdowns in this climate.`;
       }
       return text;
     },

@@ -1,11 +1,35 @@
 ---
 layout: layout.njk
-title: "About Us | Plumbing Local Pros"
-description: "Learn more about Plumbing Local Pros, your trusted nationwide network of licensed local plumbers. Same day plumbing service available across the USA."
-canonical: "https://www.plumbinglocalpros.com/about/"
+title: "About Our Nationwide Network of Licensed Emergency Electricians"
+description: "Learn about our trusted nationwide network of licensed electricians. We specialize in fast 24/7 emergency electrical repairs and complete home wiring."
 permalink: "about/index.html"
 ---
 
+{# ——— Schemas —————————————————————————————————————————————————————————— #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "{{ site.BRAND }} - About Us",
+  "url": "{{ site.DOMAIN }}/about/",
+  "image": "{{ site.DOMAIN }}/favicon.svg",
+  "telephone": "{{ site.PHONE }}",
+  "priceRange": "$"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.DOMAIN }}/" },
+    { "@type": "ListItem", "position": 2, "name": "About Us", "item": "{{ site.DOMAIN }}/about/" }
+  ]
+}
+</script>
+
+
+{# ── Breadcrumb #}
 <div class="breadcrumb-bar">
   <div class="container">
     <div class="bc-inner">
@@ -17,48 +41,253 @@ permalink: "about/index.html"
   </div>
 </div>
 
-<div style="padding:80px 0;background:var(--white)">
+{# ── About Hero #}
+<div class="about-hero">
   <div class="container">
-    <div class="sec-title4" style="text-align:center;margin-bottom:50px">
-      <span class="sub-text" style="justify-content:center">
-        <i class="ph ph-info" style="font-size:13px"></i>
-        Who We Are
-      </span>
-      <h2>About {{ site.BRAND }}</h2>
-    </div>
-
-    <div style="max-width:800px;margin:0 auto;font-size:16px;line-height:1.8;color:#555">
-      <p>
-        When a plumbing problem strikes, every minute matters. At <strong>{{ site.BRAND }}</strong>,
-        we understand how disruptive a plumbing emergency can be — from a burst pipe flooding
-        your home to a broken water heater leaving you without hot water. That's why we've
-        built a nationwide network of licensed, experienced local plumbers who are ready to
-        respond fast.
-      </p>
-      <p>
-        Our licensed plumbers are available same day for routine services and 24/7 for
-        plumbing emergencies. Whether you need drain cleaning, water heater installation,
-        pipe repair, toilet or faucet replacement, sewer line service, or leak detection —
-        {{ site.BRAND }} connects you with a trusted local plumber near you.
-      </p>
-      <p>
-        We believe in honest, upfront pricing with no hidden fees. Our plumbers arrive
-        on time, respect your home, and stand behind their work with a satisfaction guarantee.
-        From simple faucet repairs to complex repiping projects, {{ site.BRAND }} delivers quality
-        plumbing you can count on.
-      </p>
-      <p>
-        No matter where you are or when the emergency happens, our local plumbing network
-        is ready to answer the call. Trust {{ site.BRAND }} to be your reliable partner for all
-        your plumbing needs.
-      </p>
-
-      <div style="margin-top:40px;text-align:center">
-        <a class="readon orange" href="{{ site.PHONE_HREF }}">
-          <i class="ph ph-phone-call" style="font-size:18px"></i>
-          Call Us Now: {{ site.PHONE }}
-        </a>
+    <div class="about-hero-grid">
+      <div class="about-hero-content">
+        <span class="sub-label">
+          <i class="ph ph-info" style="font-size:12px"></i>
+          Who We Are
+        </span>
+        <h1>America's Most Trusted <span>Local Electrician</span> Network</h1>
+        <p>When electrical problems strike, every second counts. {{ site.BRAND }} connects homeowners and businesses with the best licensed local electricians in their area — fast, reliable, and available 24/7.</p>
+        <div class="about-hero-stats">
+          <div class="ah-stat">
+            <strong>500K+</strong>
+            <span>Jobs Completed</span>
+          </div>
+          <div class="ah-stat">
+            <strong>4.9★</strong>
+            <span>Average Rating</span>
+          </div>
+          <div class="ah-stat">
+            <strong>50</strong>
+            <span>States Covered</span>
+          </div>
+          <div class="ah-stat">
+            <strong>24/7</strong>
+            <span>Emergency Service</span>
+          </div>
+        </div>
+        <div style="margin-top:32px;display:flex;gap:14px;flex-wrap:wrap">
+          <a class="readon orange" href="{{ site.PHONE_HREF }}">
+            <i class="ph ph-phone-call" style="font-size:17px"></i>
+            {{ site.PHONE }}
+          </a>
+          <a class="readon-outline" href="/contact/">
+            <i class="ph ph-envelope" style="font-size:17px"></i>
+            Contact Us
+          </a>
+        </div>
+      </div>
+      <div class="about-hero-img">
+        <img src="/assets/images/global-hero.webp" alt="Licensed electrician at work — Local Electrician Emergency nationwide network">
+        <div class="about-badge">
+          <i class="ph ph-certificate" style="font-size:28px;color:var(--orange)"></i>
+          <div>
+            <strong>Fully Licensed</strong>
+            <span>& Insured</span>
+          </div>
+        </div>
       </div>
     </div>
+  </div>
+</div>
+
+{# ── Trust Strip #}
+<div class="trust-strip">
+  <div class="container">
+    <div class="trust-grid">
+      <div class="trust-item">
+        <i class="ph ph-certificate" style="font-size:28px;color:var(--primary)"></i>
+        <div>
+          <strong>Licensed & Insured</strong>
+          <span>Every electrician fully vetted and licensed</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="ph ph-clock-countdown" style="font-size:28px;color:var(--primary)"></i>
+        <div>
+          <strong>Same Day Dispatch</strong>
+          <span>Fast response anywhere in the USA</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="ph ph-tag" style="font-size:28px;color:var(--primary)"></i>
+        <div>
+          <strong>Upfront Flat Pricing</strong>
+          <span>No hidden fees — firm quote before we start</span>
+        </div>
+      </div>
+      <div class="trust-item">
+        <i class="ph ph-shield-check" style="font-size:28px;color:var(--primary)"></i>
+        <div>
+          <strong>100% Satisfaction</strong>
+          <span>Every job backed by our quality guarantee</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Our Story #}
+<div class="about-story">
+  <div class="container">
+    <div class="about-story-grid">
+      <div>
+        <div class="sec-title4">
+          <div class="sub-line"></div>
+          <span class="sub-text">
+            <i class="ph ph-book-open" style="font-size:13px"></i>
+            Our Story
+          </span>
+          <h2>Built on a Simple Promise: Help When You Need It Most</h2>
+          <p>{{ site.BRAND }} was founded with a single mission — make it effortless to find a qualified, trustworthy electrician at any hour, in any city across America. We saw how stressful electrical emergencies were for families and business owners, and we knew there had to be a better way.</p>
+          <p>We built a rigorous vetting process to ensure every electrician in our network is fully licensed, bonded, insured, and background-checked. We don't just list contractors — we partner with the best local electrical professionals in every market, verifying their credentials and standing behind their work.</p>
+          <p>Today, {{ site.BRAND }} has helped over 500,000 customers across all 50 states get fast, professional electrical service — from routine outlet repairs to complex 200-amp panel upgrades and whole-home rewiring. Every job. Every city. Every time.</p>
+        </div>
+      </div>
+      <div class="about-values">
+        <div class="value-card">
+          <div class="value-icon"><i class="ph ph-target" style="font-size:26px;color:var(--primary)"></i></div>
+          <div>
+            <h4>Our Mission</h4>
+            <p>Connect every American homeowner and business with a trusted local electrician — fast, transparent, and guaranteed.</p>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="ph ph-eye" style="font-size:26px;color:var(--primary)"></i></div>
+          <div>
+            <h4>Our Vision</h4>
+            <p>To be America's most reliable electrical services network — the first name people think of when they need an electrician.</p>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="ph ph-heart" style="font-size:26px;color:var(--primary)"></i></div>
+          <div>
+            <h4>Our Values</h4>
+            <p>Honesty, speed, expertise, and community. We treat every customer's home or business like our own.</p>
+          </div>
+        </div>
+        <div class="value-card">
+          <div class="value-icon"><i class="ph ph-check-circle" style="font-size:26px;color:var(--primary)"></i></div>
+          <div>
+            <h4>Our Standard</h4>
+            <p>Only NEC-compliant electricians. Full permit compliance. Clean, code-ready electrical work on every job.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Why Choose Us — Process #}
+<div class="rs-process" style="background:var(--gray-bg)">
+  <div class="container">
+    <div class="sec-center">
+      <span class="sub-label"><i class="ph ph-list-numbers" style="font-size:12px"></i> How We Work</span>
+      <h2>Getting Electrical Help Has Never Been Easier</h2>
+      <p class="sec-desc">Three simple steps from your call to a completed, guaranteed electrical repair.</p>
+    </div>
+    <div class="process-grid">
+      <div class="process-step">
+        <div class="step-num">01</div>
+        <div class="step-icon"><i class="ph ph-phone-call" style="font-size:32px;color:var(--primary)"></i></div>
+        <h3>Call 24/7 or Request Online</h3>
+        <p>Dial <a href="{{ site.PHONE_HREF }}" style="color:var(--primary);font-weight:700">{{ site.PHONE }}</a> any time of day or night. Our dispatch team immediately identifies the nearest available licensed electrician to your location.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">02</div>
+        <div class="step-icon"><i class="ph ph-magnifying-glass" style="font-size:32px;color:var(--primary)"></i></div>
+        <h3>Diagnostic & Upfront Quote</h3>
+        <p>Your electrician arrives quickly, diagnoses the issue, and provides a firm flat-rate quote before any work begins. No surprises, no hidden hourly rates — ever.</p>
+      </div>
+      <div class="process-step">
+        <div class="step-num">03</div>
+        <div class="step-icon"><i class="ph ph-wrench" style="font-size:32px;color:var(--primary)"></i></div>
+        <h3>Expert Work. Guaranteed.</h3>
+        <p>We fix it right the first time. All work is NEC-compliant, fully permitted where required, and backed by our 100% satisfaction guarantee. Clean up included.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── Services We Cover #}
+<div style="padding:80px 0;background:var(--white)">
+  <div class="container">
+    <div class="sec-center" style="margin-bottom:44px">
+      <span class="sub-label"><i class="ph ph-lightning" style="font-size:12px"></i> Our Services</span>
+      <h2>Comprehensive Electrical Services Nationwide</h2>
+      <p class="sec-desc">From emergency repairs to full rewiring — our licensed electricians handle it all.</p>
+    </div>
+    <div class="about-services-grid">
+      <div class="about-svc-item">
+        <i class="ph ph-siren" style="font-size:28px;color:var(--orange)"></i>
+        <span>Emergency Electrical</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-circuit-board" style="font-size:28px;color:var(--orange)"></i>
+        <span>Panel Upgrade & Repair</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-plug" style="font-size:28px;color:var(--orange)"></i>
+        <span>Outlet & Switch Repair</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-house-line" style="font-size:28px;color:var(--orange)"></i>
+        <span>Wiring & Rewiring</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-lightbulb" style="font-size:28px;color:var(--orange)"></i>
+        <span>Lighting Installation</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-car" style="font-size:28px;color:var(--orange)"></i>
+        <span>EV Charger Install</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-buildings" style="font-size:28px;color:var(--orange)"></i>
+        <span>Commercial Electrical</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-shield-warning" style="font-size:28px;color:var(--orange)"></i>
+        <span>Surge Protection</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-engine" style="font-size:28px;color:var(--orange)"></i>
+        <span>Generator Install</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-smoke" style="font-size:28px;color:var(--orange)"></i>
+        <span>Smoke Detector Install</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-ceiling-light" style="font-size:28px;color:var(--orange)"></i>
+        <span>Ceiling Fan Install</span>
+      </div>
+      <div class="about-svc-item">
+        <i class="ph ph-wrench" style="font-size:28px;color:var(--orange)"></i>
+        <span>Circuit Breaker Repair</span>
+      </div>
+    </div>
+    <div style="text-align:center;margin-top:40px">
+      <a class="readon orange" href="/services/">
+        <i class="ph ph-arrow-right" style="font-size:17px"></i>
+        View All Services
+      </a>
+    </div>
+  </div>
+</div>
+
+{# ── CTA #}
+<div class="cta-strip">
+  <div class="container">
+    <h2>Ready to Get Expert Electrical Help?</h2>
+    <p>Our licensed electricians are standing by 24/7. Same day service available nationwide.</p>
+    <a class="readon orange" href="{{ site.PHONE_HREF }}">
+      <i class="ph ph-phone-call" style="font-size:18px"></i>
+      {{ site.PHONE }} — Call Now Free
+    </a>
   </div>
 </div>

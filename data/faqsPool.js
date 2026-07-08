@@ -5,164 +5,204 @@ export function getFaqsPool(city, state, brand, phone) {
 
   return [
     {
-      q: `How quickly can a plumber arrive in ${cityName}?`,
-      a: `${brand} offers same-day and emergency plumbing service in ${location}. In most cases, a licensed plumber can arrive within 60 minutes of your call. Call ${phone} now for immediate dispatch.`,
+      q: `How quickly can an electrician arrive in ${cityName}?`,
+      a: `${brand} offers same-day and emergency electrical service in ${location}. In most cases involving a power outage or sparking hazard, a licensed electrician can arrive within 60 to 90 minutes. Call ${phone} for immediate dispatch.`,
     },
     {
-      q: `What plumbing services do you offer in ${location}?`,
-      a: `We offer a full range of plumbing services in ${location} including emergency plumbing, drain cleaning, water heater repair and installation, pipe repair, toilet and faucet repair, sewer line services, leak detection, and more. Call ${phone} for any plumbing need.`,
+      q: `What electrical services do you offer in ${location}?`,
+      a: `We offer a comprehensive range of electrical services including emergency outage repairs, 200-amp panel upgrades, whole-home rewiring, EV charger installations, lighting design, dedicated circuits, and GFCI outlet repair. Call ${phone} for any electrical need.`,
     },
     {
-      q: `Do you offer 24/7 emergency plumbing in ${cityName}?`,
-      a: `Yes! ${brand} provides 24-hour, 7-day-a-week emergency plumbing in ${location}. Burst pipes, major leaks, sewage backups — we respond fast any time of day or night. Call ${phone} immediately.`,
+      q: `Do you offer 24/7 emergency electrical repairs in ${cityName}?`,
+      a: `Yes! ${brand} provides 24-hour, 7-day-a-week emergency electrical support in ${location}. Sparking outlets, burnt panels, sudden power loss — we respond fast any time of day or night. Call ${phone} immediately for safety.`,
     },
     {
-      q: `Are your plumbers licensed and insured in ${stateName}?`,
-      a: `Absolutely. All ${brand} plumbers are fully licensed, bonded, and insured to perform plumbing work throughout ${stateName}. We comply with all local codes and permit requirements in ${location}.`,
+      q: `Are your electricians fully licensed and insured in ${stateName}?`,
+      a: `Absolutely. All ${brand} electricians are fully licensed, bonded, and insured to perform high and low voltage electrical work throughout ${stateName}. We comply strictly with the National Electrical Code (NEC) and local permit requirements in ${location}.`,
     },
     {
-      q: `How much does plumbing service cost in ${cityName}?`,
-      a: `Plumbing costs vary by the type and complexity of the repair. ${brand} offers honest, upfront pricing with no hidden fees. We provide a free estimate before starting any work in ${location}. Call ${phone} for a quote.`,
+      q: `How much does an electrician cost in ${cityName}?`,
+      a: `Electrical costs vary widely based on the complexity of the repair or installation. ${brand} offers honest, upfront flat-rate pricing with no hidden hourly surprises. We diagnose the issue and provide a firm quote before starting any work in ${location}.`,
     },
     {
-      q: `What should I do if I have a burst pipe in ${cityName}?`,
-      a: `First, shut off your main water supply valve immediately to stop the flow of water. Then call ${brand} at ${phone} for emergency plumbing in ${location}. Our plumbers will arrive fast to assess and repair the burst pipe.`,
+      q: `What should I do if my breaker panel starts sparking or smoking?`,
+      a: `Leave the area immediately, do not touch the panel, and if possible, shut off main power from the outside meter. Call 911 if there is a fire. Then call ${brand} at ${phone} for an emergency electrician in ${location}. Never attempt to fix a smoking panel yourself.`,
     },
     {
-      q: `Can you fix a clogged drain same day in ${cityName}?`,
-      a: `Yes! We offer same-day drain cleaning and clog removal services in ${location}. Whether it's a kitchen sink, bathroom drain, or main sewer line, our plumbers arrive fast with professional equipment. Call ${phone} today.`,
+      q: `Can you install a Tesla or EV charger at my home in ${cityName}?`,
+      a: `Yes! We specialize in Level 2 EV charger installations in ${location} for all major brands including Tesla, Ford, and Chevy. We'll assess your current panel capacity and run a dedicated 240V circuit to your garage or driveway.`,
     },
     {
-      q: `Do you repair and install water heaters in ${cityName}?`,
-      a: `Yes. ${brand} handles all water heater services in ${location} — repair, replacement, and new installation of traditional tank water heaters and tankless units. Most water heater replacements can be done same day.`,
+      q: `Do you repair and upgrade electrical panels in ${cityName}?`,
+      a: `Yes. ${brand} handles complete electrical panel upgrades in ${location} — transitioning outdated 60-amp or 100-amp service up to modern 200-amp or 400-amp service, including replacing dangerous Federal Pacific or Zinsco panels.`,
     },
     {
-      q: `How do I know if I have a hidden water leak in my ${cityName} home?`,
-      a: `Signs of hidden leaks include an unexpectedly high water bill, sounds of running water when all taps are off, wet spots on walls or floors, or low water pressure. Call ${brand} at ${phone} for professional leak detection in ${location}.`,
+      q: `How do I know if my house needs to be rewired?`,
+      a: `Signs you need rewiring in your ${location} home include frequent blown fuses, a burning smell near outlets, flickering lights, two-prong ungrounded outlets, or if your home still has outdated knob-and-tube or aluminum wiring. Call ${phone} for an inspection.`,
     },
     {
-      q: `How long does drain cleaning take in ${cityName}?`,
-      a: `Most drain cleaning jobs in ${location} take 1–2 hours depending on the severity and location of the clog. Hydro-jetting for main sewer lines may take a bit longer. We'll give you a time estimate when we arrive.`,
+      q: `Why do my lights flicker when my AC or refrigerator turns on?`,
+      a: `This is a classic sign of an overloaded circuit or a loose neutral connection at the panel. Large appliances draw massive startup current. Our electricians in ${location} can run a dedicated circuit to safely handle the heavy electrical load.`,
     },
     {
-      q: `Do you handle sewer line repair in ${cityName}?`,
-      a: `Yes. ${brand} provides complete sewer line services in ${location} including camera inspection, root removal, sewer line repair, and full sewer line replacement using modern trenchless methods when possible.`,
+      q: `Do you handle commercial electrical services in ${cityName}?`,
+      a: `Yes, ${brand} provides extensive commercial electrical services in ${location}. We handle three-phase panel upgrades, retail lighting retrofits, restaurant equipment wiring, and ongoing electrical maintenance with minimal disruption to your business.`,
     },
     {
-      q: `What is a tankless water heater and should I get one in ${cityName}?`,
-      a: `Tankless water heaters heat water on demand rather than storing it in a tank, providing endless hot water and up to 30% energy savings. They're a great investment for ${location} homes with multiple bathrooms or high hot water demands.`,
+      q: `What is a GFCI outlet and where are they required in ${cityName}?`,
+      a: `A GFCI (Ground Fault Circuit Interrupter) outlet prevents deadly electrical shocks by shutting off power when it detects a fault. Code in ${location} requires them in kitchens, bathrooms, garages, outdoors, and anywhere within 6 feet of a water source.`,
     },
     {
-      q: `Can you fix a running toilet in ${cityName}?`,
-      a: `Absolutely. A running toilet can waste hundreds of gallons of water per day. Our plumbers in ${location} can quickly diagnose and repair the flapper, fill valve, or flush mechanism to stop the waste. Call ${phone} today.`,
+      q: `Can you fix a tripped circuit breaker that won't reset?`,
+      a: `Absolutely. A breaker that refuses to reset is doing its job by protecting you from a dead short circuit, overloaded wire, or a bad breaker. Do not force it. Our electricians in ${location} can quickly diagnose and repair the underlying fault.`,
     },
     {
-      q: `Do you provide plumbing services for commercial properties in ${cityName}?`,
-      a: `Yes, ${brand} serves both residential and commercial clients in ${location}. We handle plumbing for restaurants, offices, retail spaces, and multi-unit buildings with minimal disruption to your operations.`,
+      q: `Do you install whole-home surge protectors in ${cityName}?`,
+      a: `Yes! A power strip isn't enough to protect your expensive HVAC, appliances, and TVs from lightning or grid surges. Our electricians in ${location} install whole-home surge protectors directly at the main panel to shield your entire electrical system.`,
     },
     {
-      q: `What causes low water pressure in my ${cityName} home?`,
-      a: `Common causes include corroded pipes, a failing pressure regulator, mineral buildup, or a leak in your plumbing system. Our licensed plumbers in ${location} can diagnose and fix low water pressure issues quickly. Call ${phone}.`,
+      q: `Why do my lightbulbs burn out so fast?`,
+      a: `Frequent bulb burnout can be caused by high voltage entering your home, loose connections in the fixture, using bulbs with too high wattage, or excessive vibration. Call ${brand} at ${phone} to safely inspect your lighting circuits in ${location}.`,
     },
     {
-      q: `How do I prevent drain clogs in my ${cityName} home?`,
-      a: `Avoid pouring grease down drains, use drain screens to catch hair and debris, flush drains monthly with hot water and baking soda, and schedule annual professional drain cleaning in ${cityName} to keep pipes clear.`,
-    },
-    {
-      q: `Do you offer repiping services in ${cityName}?`,
-      a: `Yes. If your home has old galvanized, polybutylene, or corroded pipes, ${brand} offers full and partial repiping services in ${location} using copper or PEX pipe to restore water quality and pressure throughout your home.`,
+      q: `Do you offer smart home and doorbell wiring services in ${cityName}?`,
+      a: `Yes. We provide hardwiring services for Ring doorbells, smart thermostats, security cameras, and smart lighting systems throughout ${location}, ensuring reliable power without relying solely on batteries.`,
     },
     {
       q: `What areas do you serve near ${cityName}?`,
-      a: `${brand} serves ${cityName} and surrounding communities throughout ${stateName}. Call ${phone} to confirm service availability in your specific area.`,
+      a: `${brand} serves ${cityName} and all surrounding communities throughout ${stateName}. Our fleet of electrical vans is strategically stationed to provide rapid response. Call ${phone} to confirm service availability at your address.`,
     },
     {
-      q: `Do you install gas lines in ${cityName}?`,
-      a: `Yes. Our licensed plumbers in ${location} are certified for gas line installation, repair, and leak testing. We handle gas lines for appliances, outdoor grills, generators, and whole-house systems safely and to code.`,
+      q: `Do you install backup generators in ${cityName}?`,
+      a: `Yes. Our licensed electricians in ${location} install whole-home standby generators (like Generac) and manual transfer switches for portable generators, ensuring your home stays powered safely during severe weather grid failures.`,
     },
     {
-      q: `How do I turn off water to my house in an emergency in ${cityName}?`,
-      a: `Locate your main water shut-off valve, usually near the water meter at the front of your home or in the basement/crawl space. Turn it clockwise to shut off. Then call ${brand} at ${phone} for emergency plumbing in ${location}.`,
+      q: `Why is one room in my house completely out of power?`,
+      a: `This is often caused by a tripped breaker, a bad connection at a single outlet breaking the chain, or a tripped GFCI hidden in a garage or bathroom that protects that room. Our electricians in ${location} will track down the open circuit quickly.`,
     },
     {
-      q: `Why is my garbage disposal smelling in ${cityName}?`,
-      a: `Food particles can rot inside the unit. Try grinding ice cubes and lemon peels, or flush it with baking soda and vinegar. If it persists or drains slowly, call ${brand} for professional garbage disposal repair in ${location}.`,
+      q: `Can you repair an underground electrical line to my shed or pool?`,
+      a: `Yes. ${brand} handles underground trenching and conduit repair for detached garages, sheds, pools, and landscape lighting in ${location}, ensuring the underground splices are fully waterproof and code-compliant.`,
     },
     {
-      q: `What is water hammer and can you fix it in ${cityName}?`,
-      a: `Water hammer is a loud banging noise caused by water suddenly stopping in the pipes. Yes, our plumbers in ${location} can install water hammer arrestors or secure loose pipes to fix this problem completely.`,
+      q: `What is an AFCI breaker and do I need one?`,
+      a: `An Arc Fault Circuit Interrupter (AFCI) detects dangerous electrical arcs that can cause fires (like a wire chewed by a mouse). Modern building codes in ${location} require them for most living areas, especially bedrooms. We can easily upgrade your breakers.`
     },
     {
-      q: `Why does my toilet bubble when the bathtub drains?`,
-      a: `This usually indicates a clog in your main sewer line or a blocked vent pipe. Because it affects multiple fixtures, you should call ${brand} at ${phone} for professional sewer line inspection in ${location} before a sewage backup occurs.`,
+      q: `Are aluminum wires safe in my ${cityName} home?`,
+      a: `Aluminum wiring (common in the 1960s and 70s) expands and contracts more than copper, leading to loose connections and high fire risk. Our electricians in ${location} can mitigate this using special AlumiConn connectors or by completely rewiring your home.`
     },
     {
-      q: `Do you install water softeners for hard water in ${cityName}?`,
-      a: `Yes, ${location} often has hard water which can ruin appliances and pipes. ${brand} installs high-quality whole-house water softeners and filtration systems to protect your home's plumbing.`,
+      q: `Can I change a three-prong outlet to a two-prong myself?`,
+      a: `No. Simply swapping the faceplate does not magically ground the outlet, and doing so violates the NEC. You risk severe shock and damage to your electronics. Our electricians in ${location} can properly ground the circuit or install a GFCI for safety.`
     },
     {
-      q: `Can tree roots really damage my sewer line in ${cityName}?`,
-      a: `Absolutely. Tree roots are drawn to the moisture and nutrients in sewer pipes. Once they enter through a tiny crack, they grow rapidly, causing major clogs and pipe collapse. We use camera inspections to locate roots in ${location}.`,
+      q: `Why does my outlet feel warm or hot to the touch?`,
+      a: `A hot outlet is a serious fire hazard. It indicates a loose connection, an overloaded circuit, or failing internal contacts generating immense heat. Unplug everything immediately and call ${brand} at ${phone} for emergency service in ${location}.`
     },
     {
-      q: `My water heater is making a popping noise. Is this dangerous?`,
-      a: `Popping or rumbling noises mean mineral sediment has built up at the bottom of the tank and is boiling the water trapped underneath. Our plumbers in ${location} can flush the tank or replace the unit if the tank is corroded.`,
+      q: `Do you install ceiling fans in ${cityName}?`,
+      a: `Yes. We professionally assemble, mount, and wire ceiling fans in ${location}. We ensure the electrical box in the ceiling is rated to support the heavy weight and vibration of the fan, preventing it from crashing down.`
     },
     {
-      q: `Do you repair outdoor hose bibs in ${cityName}?`,
-      a: `Yes. Leaking outdoor faucets are common, especially after a freezing winter. ${brand} can repair your leaky spigot or upgrade it to a frost-free hose bib to prevent future freezing in ${location}.`,
+      q: `How long does a panel upgrade take in ${cityName}?`,
+      a: `A standard 100-amp to 200-amp panel upgrade in ${location} typically takes a full day (8-10 hours). We coordinate the power shutoff with the local utility company to ensure minimal disruption to your daily life.`
     },
     {
-      q: `Why is my dishwasher backing up into the sink?`,
-      a: `This is usually caused by a clogged garbage disposal or a blockage in the shared sink drain line. Our drain cleaning specialists in ${location} can clear the blockage fast so both fixtures drain properly.`,
+      q: `Why is my electric bill suddenly so high?`,
+      a: `A sudden spike can be caused by a failing appliance running continuously, a bad thermostat, or an underground electrical leak. Our master electricians in ${location} can perform an energy audit to track down the exact source of the phantom power draw.`
     },
     {
-      q: `My toilet rocks when I sit on it. Is that a problem?`,
-      a: `Yes, a rocking toilet can damage the wax ring seal underneath, leading to hidden leaks and rotted subflooring. Call ${brand} at ${phone} to have a licensed plumber in ${location} properly secure and reseal the toilet.`,
+      q: `What is a dedicated circuit?`,
+      a: `A dedicated circuit is an electrical line running from your panel directly to a single appliance, ensuring it doesn't share power with anything else. Appliances like microwaves, refrigerators, and EVs in ${location} require dedicated circuits by code.`
     },
     {
-      q: `How long do water heaters typically last in ${cityName}?`,
-      a: `Traditional tank water heaters last about 8-12 years, while tankless models can last up to 20 years with proper maintenance. If your unit in ${location} is over 10 years old and having issues, replacement is often the most cost-effective option.`,
+      q: `Do you offer outdoor landscape lighting design in ${cityName}?`,
+      a: `Yes, ${brand} provides complete low-voltage landscape lighting design and installation in ${location}. We install path lights, spotlights, and deck lighting to enhance your home's security, safety, and curb appeal at night.`
     },
     {
-      q: `Can you fix polybutylene pipes in my ${cityName} home?`,
-      a: `Polybutylene pipes are notoriously defective and prone to sudden bursting. We strongly recommend completely repiping homes with polybutylene. Contact ${brand} for a repiping consultation in ${location}.`,
+      q: `Can you fix a humming noise coming from my breaker box?`,
+      a: `A humming or buzzing breaker panel is a sign of an overloaded breaker that is failing to trip, or a loose connection arcing internally. This is highly dangerous. Call ${phone} immediately for a priority inspection in ${location}.`
     },
     {
-      q: `Do you replace washing machine hoses in ${cityName}?`,
-      a: `Yes. Old rubber washing machine hoses are a leading cause of home flooding. We can replace them with durable stainless steel braided hoses for peace of mind in your ${location} home.`,
+      q: `Do you replace knob-and-tube wiring in ${cityName}?`,
+      a: `Yes, we are experts at completely removing and replacing antiquated knob-and-tube wiring in historic ${location} homes. This process is necessary to secure modern homeowner's insurance and ensure the absolute safety of your property.`
     },
     {
-      q: `Why does my hot water smell like rotten eggs in ${cityName}?`,
-      a: `This smell usually comes from a reaction between the anode rod inside your water heater and bacteria in the water. Our plumbers in ${location} can replace the anode rod and flush the tank to eliminate the odor.`,
+      q: `Can an electrician fix my internet or coaxial cables?`,
+      a: `Yes. While we specialize in high voltage, ${brand} also handles low-voltage data cabling (Cat5e/Cat6) and coaxial runs for home offices, entertainment centers, and mesh WiFi networks throughout ${location}.`
     },
     {
-      q: `What is a backflow preventer and do I need one in ${cityName}?`,
-      a: `A backflow preventer stops contaminated water from flowing backwards into your clean water supply. Many municipalities in ${stateName} require them for sprinkler systems or commercial buildings. We install and test backflow preventers in ${location}.`,
+      q: `What is a subpanel and when do I need one?`,
+      a: `A subpanel acts as a satellite breaker box. You need one in ${location} if your main panel is out of physical space for new breakers, or if you are building an addition, a detached garage, or a dedicated workshop that requires multiple new circuits.`
     },
     {
-      q: `How do I test my sump pump in ${cityName}?`,
-      a: `Slowly pour a bucket of water into the sump pit until the float rises and activates the pump. It should quickly drain the water and turn off. If it doesn't, call ${brand} immediately for sump pump repair in ${location} before the next storm.`,
+      q: `Are permits required for electrical work in ${cityName}?`,
+      a: `Almost all significant electrical work, including panel upgrades, adding new circuits, and rewiring, requires a permit in ${location}. ${brand} handles the entire permitting and inspection process for you to guarantee code compliance.`
     },
     {
-      q: `Why is my shower drain constantly clogging with hair?`,
-      a: `Hair easily binds with soap scum inside the P-trap. If liquid drain cleaners aren't working, or if the clog is deep, call ${brand} in ${location}. We use professional snakes to fully extract the clog without damaging your pipes.`,
+      q: `Do you install recessed lighting (can lights) in ${cityName}?`,
+      a: `Yes! We install modern, energy-efficient LED recessed lighting in kitchens, living rooms, and basements across ${location}. We can seamlessly cut into drywall or plaster and fish the wires with minimal damage to your ceiling.`
     },
     {
-      q: `Can you install plumbing for a bathroom remodel in ${cityName}?`,
-      a: `Yes! ${brand} provides expert plumbing installation for remodels in ${location}. We can move pipes, install new shower valves, set tubs, and hook up vanities to ensure your new bathroom's plumbing is perfect.`,
+      q: `Why does my GFCI outlet keep tripping?`,
+      a: `A GFCI trips when it detects a ground fault (current leaking to ground, potentially through water or a person). If it trips constantly, there is either a real, dangerous short circuit on that line, or the GFCI mechanism itself has failed and needs replacement.`
     },
     {
-      q: `Is a leaky faucet really a big deal in ${cityName}?`,
-      a: `A faucet dripping once per second wastes over 3,000 gallons of water a year, spiking your water bill. It also causes unnecessary wear on the fixture. Call ${brand} at ${phone} to fix the drip quickly in ${location}.`,
+      q: `Can you install a transfer switch for my portable generator?`,
+      a: `Yes. Plugging a portable generator directly into a dryer outlet (backfeeding) is illegal and lethal to utility workers. Our electricians in ${location} install safe, code-compliant manual transfer switches so you can run your home on generator power legally.`
     },
     {
-      q: `Do you offer commercial hydro-jetting in ${cityName}?`,
-      a: `Yes. Restaurants and commercial properties in ${location} often suffer from heavy grease and sludge buildup. Our high-pressure hydro-jetting service clears the toughest commercial line blockages entirely.`,
+      q: `Do you repair commercial parking lot lighting in ${cityName}?`,
+      a: `Yes. ${brand} provides commercial lighting maintenance in ${location}, including repairing or upgrading tall parking lot pole lights, exterior building security lights, and LED wall packs to keep your business safe and well-lit.`
     },
     {
-      q: `How can I tell if my main sewer line is clogged in ${cityName}?`,
-      a: `Signs of a main line clog include water backing up into your bathtub when the toilet is flushed, gurgling drains, and sewage odors. This is an emergency. Call ${brand} immediately at ${phone} for service in ${location}.`,
+      q: `What happens during an electrical safety inspection?`,
+      a: `Our licensed electricians in ${location} will thoroughly check your main panel, test all GFCI/AFCI breakers, inspect grounding systems, check outlet tension, and look for code violations or fire hazards. It's highly recommended when buying a new home.`
+    },
+    {
+      q: `Why is there a burning smell near my washing machine?`,
+      a: `This could be a failing motor, but it's often a melting 240-volt receptacle or a loose wire connection generating heat. Turn off the appliance and the breaker immediately, and call ${brand} in ${location} to inspect the circuit.`
+    },
+    {
+      q: `Do you install smoke and carbon monoxide detectors in ${cityName}?`,
+      a: `Yes. Code in ${location} requires hardwired, interconnected smoke and CO detectors with battery backups. If one sounds, they all sound. We can upgrade your entire home's early warning system to meet current safety standards.`
+    },
+    {
+      q: `Can you troubleshoot a faulty pool pump timer?`,
+      a: `Absolutely. We handle all exterior and pool electrical systems in ${location}, including pump wiring, mechanical timers, smart pool automation systems, and ensuring the pool's bonding grid is perfectly intact to prevent shocks.`
+    },
+    {
+      q: `What should I do if a tree branch pulls down my power line?`,
+      a: `Stay far away from the downed line! Call your local utility company immediately to shut off the grid. Once the grid is off, call ${brand} at ${phone}. We repair the weatherhead, mast, and meter base on your ${location} home so the utility can restore power.`
+    },
+    {
+      q: `Do you provide electrical services for mobile homes in ${cityName}?`,
+      a: `Yes, we service mobile and manufactured homes in ${location}. We handle pedestal repairs, under-skirt wiring, and panel upgrades, strictly adhering to the specific NEC codes governing manufactured housing.`
+    },
+    {
+      q: `Can you trace a wire hidden behind my wall without tearing it down?`,
+      a: `Yes. Our electricians in ${location} use advanced electromagnetic wire tracers and tone generators to locate buried wires, find hidden junction boxes, and pinpoint short circuits without unnecessarily destroying your drywall.`
+    },
+    {
+      q: `Why do I get shocked when I touch my metal appliance?`,
+      a: `This is an extreme emergency indicating a serious grounding failure. Electricity is seeking a path to ground through the appliance frame. Do not touch the appliance again, shut off main power if possible, and call our ${location} emergency dispatch immediately.`
+    },
+    {
+      q: `Do you install dimmers for LED lights in ${cityName}?`,
+      a: `Yes. Older dimmers designed for incandescent bulbs will cause modern LEDs to flicker or buzz. We install specialized LED-compatible dimmer switches throughout ${location} to ensure smooth, silent dimming for your lighting.`
+    },
+    {
+      q: `Can you upgrade my home to a 400-amp service?`,
+      a: `Yes. Very large homes in ${location} with multiple HVAC units, pool heaters, and dual EV chargers often require a 400-amp service (usually split into two 200-amp panels). We handle the entire engineering, permitting, and installation process.`
+    },
+    {
+      q: `What is electrical load balancing?`,
+      a: `Load balancing ensures power is distributed evenly across the two 'legs' of your electrical panel. If unbalanced, one leg can overload and trip the main breaker even if you aren't using maximum power. Our ${location} technicians can easily rebalance your panel.`
+    },
+    {
+      q: `How do I schedule an electrician in ${cityName} right now?`,
+      a: `It's easy. Simply call ${brand} at ${phone}. Our dispatchers are available 24/7 to answer your call, provide an estimated arrival time, and route the nearest licensed electrician directly to your property in ${location}.`
     }
   ];
 }

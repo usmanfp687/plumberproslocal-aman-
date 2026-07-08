@@ -1,11 +1,35 @@
 ---
 layout: layout.njk
-title: "Contact Us | Plumbing Local Pros"
-description: "Contact Plumbing Local Pros for same day and 24/7 emergency plumbing services. Call (877) 765-9415 anytime for immediate assistance."
-canonical: "https://www.plumbinglocalpros.com/contact/"
+title: "Contact Our Expert Electricians | 24/7 Emergency Repair Service"
+description: "Contact our licensed local electricians for 24/7 emergency services and electrical repairs. Call anytime or fill out our form for a fast free quote!"
 permalink: "contact/index.html"
 ---
 
+{# ——— Schemas —————————————————————————————————————————————————————————— #}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Electrician",
+  "name": "{{ site.BRAND }} - Contact Us",
+  "url": "{{ site.DOMAIN }}/contact/",
+  "image": "{{ site.DOMAIN }}/favicon.svg",
+  "telephone": "{{ site.PHONE }}",
+  "priceRange": "$"
+}
+</script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    { "@type": "ListItem", "position": 1, "name": "Home", "item": "{{ site.DOMAIN }}/" },
+    { "@type": "ListItem", "position": 2, "name": "Contact Us", "item": "{{ site.DOMAIN }}/contact/" }
+  ]
+}
+</script>
+
+
+{# ── Breadcrumb #}
 <div class="breadcrumb-bar">
   <div class="container">
     <div class="bc-inner">
@@ -17,34 +41,326 @@ permalink: "contact/index.html"
   </div>
 </div>
 
-<div style="padding:80px 0;background:var(--gray-bg)">
+{# ── Contact Hero Banner #}
+<div class="contact-hero">
   <div class="container">
-    <div class="sec-title4" style="text-align:center;margin-bottom:50px">
-      <span class="sub-text" style="justify-content:center">
-        <i class="ph ph-envelope" style="font-size:13px"></i>
-        Get In Touch
-      </span>
-      <h2>Contact {{ site.BRAND }}</h2>
-      <p style="max-width:600px;margin:15px auto 0;color:#666">
-        We are available same day and 24/7 for emergency plumbing.
-        Don't wait for a plumbing problem to get worse — call our dispatch immediately for rapid assistance.
-      </p>
-    </div>
+    <span class="sub-label">
+      <i class="ph ph-envelope" style="font-size:12px"></i>
+      Get In Touch
+    </span>
+    <h1>Contact <span>{{ site.BRAND }}</span></h1>
+    <p>We're available same day and 24/7 for emergencies. Reach out by phone, email, or fill out our quick form below — we respond within minutes.</p>
+  </div>
+</div>
 
-    <div class="contact-grid">
-      <div style="background:#fff;padding:40px 30px;border-radius:8px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,0.05)">
-        <i class="ph ph-phone-call" style="font-size:48px;color:var(--orange);margin-bottom:20px;display:block"></i>
-        <h3 style="font-size:20px;margin-bottom:10px">Same Day &amp; Emergency Dispatch</h3>
-        <p style="color:#666;margin-bottom:20px">Call us right now for immediate dispatch to your location.</p>
-        <a href="{{ site.PHONE_HREF }}" style="font-size:22px;font-weight:700;color:var(--text-dark)">{{ site.PHONE }}</a>
+{# ── Contact Main Body #}
+<div class="contact-body">
+  <div class="container">
+    <div class="contact-main-grid">
+
+      {# ── Left: Contact Info Cards #}
+      <div class="contact-info-col">
+        <h2>Reach Us Directly</h2>
+        <p style="color:var(--text-body);margin-bottom:28px">For life-threatening electrical emergencies, call 911 first, then contact us immediately.</p>
+
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background:rgba(249,115,22,0.1)">
+            <i class="ph ph-phone-call" style="font-size:26px;color:var(--orange)"></i>
+          </div>
+          <div>
+            <h4>Call Us — 24/7 Emergency Line</h4>
+            <a href="{{ site.PHONE_HREF }}" class="contact-phone-link">{{ site.PHONE }}</a>
+            <p>Same day dispatch. Emergency response within 60–90 minutes in most areas.</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background:rgba(26,86,219,0.08)">
+            <i class="ph ph-envelope-open" style="font-size:26px;color:var(--primary)"></i>
+          </div>
+          <div>
+            <h4>Email Us</h4>
+            <a href="mailto:info@localelectricianemergency.com" class="contact-email-link">info@localelectricianemergency.com</a>
+            <p>For non-emergencies, billing questions, or general inquiries. We reply within 2 hours.</p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background:rgba(26,86,219,0.08)">
+            <i class="ph ph-clock" style="font-size:26px;color:var(--primary)"></i>
+          </div>
+          <div>
+            <h4>Hours of Operation</h4>
+            <p class="contact-hours">
+              <span><strong>Emergency Line:</strong> 24 hours, 7 days a week</span>
+              <span><strong>Office Hours:</strong> Mon–Fri, 7am–7pm local time</span>
+              <span><strong>Same Day Service:</strong> Available in all 50 states</span>
+            </p>
+          </div>
+        </div>
+
+        <div class="contact-card">
+          <div class="contact-card-icon" style="background:rgba(26,86,219,0.08)">
+            <i class="ph ph-map-pin" style="font-size:26px;color:var(--primary)"></i>
+          </div>
+          <div>
+            <h4>Service Area</h4>
+            <p>We serve all 50 states across the United States. Find licensed electricians in your city by searching our <a href="/services/" style="color:var(--primary);font-weight:600">services directory</a>.</p>
+          </div>
+        </div>
+
+        {# Trust badges mini #}
+        <div class="contact-trust">
+          <div class="ct-badge">
+            <i class="ph ph-certificate" style="font-size:18px;color:var(--primary)"></i>
+            Licensed & Insured
+          </div>
+          <div class="ct-badge">
+            <i class="ph ph-shield-check" style="font-size:18px;color:var(--primary)"></i>
+            Background Checked
+          </div>
+          <div class="ct-badge">
+            <i class="ph ph-tag" style="font-size:18px;color:var(--primary)"></i>
+            Upfront Pricing
+          </div>
+        </div>
       </div>
 
-      <div style="background:#fff;padding:40px 30px;border-radius:8px;text-align:center;box-shadow:0 4px 15px rgba(0,0,0,0.05)">
-        <i class="ph ph-envelope-open" style="font-size:48px;color:var(--primary);margin-bottom:20px;display:block"></i>
-        <h3 style="font-size:20px;margin-bottom:10px">Email Us</h3>
-        <p style="color:#666;margin-bottom:20px">For non-emergencies, billing, or general inquiries.</p>
-        <a href="mailto:info@plumbinglocalpros.com" style="font-size:18px;font-weight:500;color:var(--primary);word-break:break-all">info@plumbinglocalpros.com</a>
+      {# ── Right: Contact Form #}
+      <div class="contact-form-col">
+        <div class="contact-form-box">
+          <div class="form-header">
+            <h3>Request a Free Estimate</h3>
+            <p>Fill out the form below and a dispatcher will contact you within minutes.</p>
+          </div>
+          <form class="contact-form" id="contactForm" action="#" method="POST" novalidate>
+            <div class="form-row">
+              <div class="form-group">
+                <label for="firstName">First Name <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-user input-icon"></i>
+                  <input type="text" id="firstName" name="firstName" placeholder="John" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="lastName">Last Name <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-user input-icon"></i>
+                  <input type="text" id="lastName" name="lastName" placeholder="Smith" required>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="phone">Phone Number <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-phone input-icon"></i>
+                  <input type="tel" id="phone" name="phone" placeholder="(555) 000-0000" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="email">Email Address</label>
+                <div class="input-wrap">
+                  <i class="ph ph-envelope input-icon"></i>
+                  <input type="email" id="email" name="email" placeholder="you@email.com">
+                </div>
+              </div>
+            </div>
+
+            <div class="form-row">
+              <div class="form-group">
+                <label for="city">City <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-map-pin input-icon"></i>
+                  <input type="text" id="city" name="city" placeholder="Your City" required>
+                </div>
+              </div>
+              <div class="form-group">
+                <label for="state">State <span class="req">*</span></label>
+                <div class="input-wrap">
+                  <i class="ph ph-map-trifold input-icon"></i>
+                  <select id="state" name="state" required>
+                    <option value="" disabled selected>Select State</option>
+                    <option>Alabama</option><option>Alaska</option><option>Arizona</option><option>Arkansas</option><option>California</option><option>Colorado</option><option>Connecticut</option><option>Delaware</option><option>Florida</option><option>Georgia</option><option>Hawaii</option><option>Idaho</option><option>Illinois</option><option>Indiana</option><option>Iowa</option><option>Kansas</option><option>Kentucky</option><option>Louisiana</option><option>Maine</option><option>Maryland</option><option>Massachusetts</option><option>Michigan</option><option>Minnesota</option><option>Mississippi</option><option>Missouri</option><option>Montana</option><option>Nebraska</option><option>Nevada</option><option>New Hampshire</option><option>New Jersey</option><option>New Mexico</option><option>New York</option><option>North Carolina</option><option>North Dakota</option><option>Ohio</option><option>Oklahoma</option><option>Oregon</option><option>Pennsylvania</option><option>Rhode Island</option><option>South Carolina</option><option>South Dakota</option><option>Tennessee</option><option>Texas</option><option>Utah</option><option>Vermont</option><option>Virginia</option><option>Washington</option><option>West Virginia</option><option>Wisconsin</option><option>Wyoming</option>
+                  </select>
+                </div>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="service">Service Needed <span class="req">*</span></label>
+              <div class="input-wrap">
+                <i class="ph ph-lightning input-icon"></i>
+                <select id="service" name="service" required>
+                  <option value="" disabled selected>Select a Service</option>
+                  <option>Emergency Electrical Repair</option>
+                  <option>Electrical Panel Upgrade</option>
+                  <option>Wiring & Rewiring</option>
+                  <option>Outlet & Switch Repair</option>
+                  <option>Lighting Installation</option>
+                  <option>EV Charger Installation</option>
+                  <option>Generator Installation</option>
+                  <option>Ceiling Fan Installation</option>
+                  <option>Circuit Breaker Repair</option>
+                  <option>Surge Protection</option>
+                  <option>Smoke Detector Installation</option>
+                  <option>Commercial Electrical</option>
+                  <option>Other</option>
+                </select>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="urgency">How Urgent Is This?</label>
+              <div class="urgency-pills" id="urgencyGroup">
+                <label class="urgency-pill">
+                  <input type="radio" name="urgency" value="emergency"> 🚨 Emergency Now
+                </label>
+                <label class="urgency-pill">
+                  <input type="radio" name="urgency" value="today"> ⚡ Today
+                </label>
+                <label class="urgency-pill">
+                  <input type="radio" name="urgency" value="this-week"> 📅 This Week
+                </label>
+                <label class="urgency-pill">
+                  <input type="radio" name="urgency" value="quote-only"> 💬 Just a Quote
+                </label>
+              </div>
+            </div>
+
+            <div class="form-group">
+              <label for="message">Describe the Issue <span class="req">*</span></label>
+              <div class="input-wrap">
+                <i class="ph ph-chat-text input-icon" style="top:16px"></i>
+                <textarea id="message" name="message" rows="4" placeholder="E.g. Breaker keeps tripping, no power in kitchen, sparking outlet…" required></textarea>
+              </div>
+            </div>
+
+            <button type="submit" class="form-submit-btn" id="submitBtn">
+              <i class="ph ph-paper-plane-tilt" style="font-size:18px"></i>
+              Send My Request — Free Estimate
+            </button>
+
+            <p class="form-disclaimer">
+              <i class="ph ph-lock" style="font-size:12px"></i>
+              Your information is 100% private. We never sell or share your data.
+              For immediate emergencies, call <a href="{{ site.PHONE_HREF }}">{{ site.PHONE }}</a> directly.
+            </p>
+          </form>
+
+          {# Success message (hidden by default) #}
+          <div class="form-success" id="formSuccess" style="display:none">
+            <div class="success-icon"><i class="ph ph-check-circle" style="font-size:52px;color:#22c55e"></i></div>
+            <h3>Request Received!</h3>
+            <p>Thank you! A dispatcher will call you back within <strong>15 minutes</strong>. For urgent issues, call us directly:</p>
+            <a class="readon orange" href="{{ site.PHONE_HREF }}">
+              <i class="ph ph-phone-call" style="font-size:17px"></i>
+              {{ site.PHONE }}
+            </a>
+          </div>
+        </div>
       </div>
     </div>
   </div>
 </div>
+
+{# ── FAQ Strip #}
+<div style="padding:72px 0;background:var(--gray-bg)">
+  <div class="container">
+    <div class="sec-center" style="margin-bottom:40px">
+      <span class="sub-label"><i class="ph ph-chat-circle-dots" style="font-size:12px"></i> Common Questions</span>
+      <h2>Frequently Asked Questions</h2>
+    </div>
+    <div class="contact-faq-grid">
+      <div class="cfaq-item">
+        <h4><i class="ph ph-clock" style="color:var(--orange);margin-right:8px"></i>How fast can an electrician arrive?</h4>
+        <p>In most areas, our licensed electricians can arrive within 60–90 minutes for emergency calls. Same day service is available nationwide for non-urgent requests.</p>
+      </div>
+      <div class="cfaq-item">
+        <h4><i class="ph ph-tag" style="color:var(--orange);margin-right:8px"></i>Do you charge for estimates?</h4>
+        <p>We offer free estimates on most services. Your electrician will diagnose the issue and give you a firm flat-rate quote before any work begins — no surprise charges.</p>
+      </div>
+      <div class="cfaq-item">
+        <h4><i class="ph ph-certificate" style="color:var(--orange);margin-right:8px"></i>Are your electricians licensed and insured?</h4>
+        <p>Yes. Every electrician in our network is fully licensed, bonded, and insured in their state. We verify credentials and conduct background checks on all partners.</p>
+      </div>
+      <div class="cfaq-item">
+        <h4><i class="ph ph-moon" style="color:var(--orange);margin-right:8px"></i>Do you work nights and weekends?</h4>
+        <p>Absolutely. Our emergency line is open 24 hours a day, 7 days a week, 365 days a year — including all holidays. Electrical emergencies don't keep business hours.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+{# ── CTA Strip #}
+<div class="cta-strip">
+  <div class="container">
+    <h2>Don't Wait — Get Expert Electrical Help Now</h2>
+    <p>Our licensed electricians are standing by. Call anytime for same day service.</p>
+    <a class="readon orange" href="{{ site.PHONE_HREF }}">
+      <i class="ph ph-phone-call" style="font-size:18px"></i>
+      {{ site.PHONE }} — Free Estimate
+    </a>
+  </div>
+</div>
+
+<script>
+document.getElementById('contactForm').addEventListener('submit', function(e) {
+  e.preventDefault();
+  
+  const form = this;
+  const formData = new FormData(form);
+  
+  // Disable button to prevent double submit
+  const btn = form.querySelector('button[type="submit"]');
+  const btnText = btn.innerHTML;
+  if(btn) {
+    btn.disabled = true;
+    btn.innerHTML = 'Sending...';
+  }
+
+  fetch('https://leadslytic.com/api/f/20c5e82a-52f4-43c9-b0d3-c90ba2e69b2d', {
+    method: 'POST',
+    body: formData
+  }).then(response => {
+    // Show Toast
+    showToast('Your request has been successfully sent! We will contact you shortly.');
+    
+    // Hide form and show success message
+    form.style.display = 'none';
+    const successMsg = document.getElementById('formSuccess');
+    if(successMsg) successMsg.style.display = 'block';
+  }).catch(error => {
+    showToast('Something went wrong. Please try again or call us directly.');
+    if(btn) {
+      btn.disabled = false;
+      btn.innerHTML = btnText;
+    }
+  });
+});
+
+function showToast(message) {
+  let toast = document.getElementById('leads-toast');
+  if (!toast) {
+    toast = document.createElement('div');
+    toast.id = 'leads-toast';
+    toast.style.cssText = 'position:fixed;bottom:30px;right:30px;background:#10b981;color:#fff;padding:16px 24px;border-radius:8px;box-shadow:0 10px 25px rgba(0,0,0,0.2);font-weight:600;z-index:9999;transition:opacity 0.3s;opacity:0;font-family:system-ui,sans-serif;';
+    document.body.appendChild(toast);
+  }
+  toast.innerText = message;
+  toast.style.opacity = '1';
+  
+  setTimeout(() => {
+    toast.style.opacity = '0';
+  }, 4000);
+}
+
+// Urgency pill radio toggle
+document.querySelectorAll('.urgency-pill').forEach(function(label) {
+  label.addEventListener('click', function() {
+    document.querySelectorAll('.urgency-pill').forEach(l => l.classList.remove('active'));
+    this.classList.add('active');
+  });
+});
+</script>

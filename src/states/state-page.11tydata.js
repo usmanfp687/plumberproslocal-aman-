@@ -1,6 +1,7 @@
 import { getFaqsPool } from '../../data/faqsPool.js';
 import { getTestimonialsPool } from '../../data/testimonialsPool.js';
 import { getWhyChoosePool } from '../../data/whyChoosePool.js';
+import { getWhoWeArePool } from '../../data/whoWeArePool.js';
 
 function getSeededRandom(seedString) {
   let seed = 0;
@@ -25,6 +26,43 @@ function shuffleArray(array, randomFunc) {
 
 export default {
   eleventyComputed: {
+    metaTitle: (data) => {
+      const stateName = data.state.name;
+      const rand = getSeededRandom(data.state.slug);
+      const variation = Math.floor(rand() * 3);
+      
+      const titles = [
+        `Expert Electrician in ${stateName} | 24/7 Fast & Local Repair`,
+        `Top Rated Electrician in ${stateName} | Reliable Same Day`,
+        `Best Local Electrician in ${stateName} | Emergency Repair Service`
+      ];
+      return titles[variation];
+    },
+    metaDesc: (data) => {
+      const stateName = data.state.name;
+      const rand = getSeededRandom(data.state.slug);
+      const variation = Math.floor(rand() * 3);
+      
+      const descs = [
+        `Searching for a trusted electrician in ${stateName}? We offer 24/7 emergency electrical repairs, panel upgrades, and home wiring. Call our team today!`,
+        `Need an affordable electrician in ${stateName}? Our highly skilled experts deliver guaranteed same-day electrical services, circuit troubleshooting & repairs.`,
+        `Hire the best local electrician in ${stateName}. We specialize in reliable home wiring, rapid emergency power restoration, and circuit breaker installations.`
+      ];
+      return descs[variation];
+    },
+    h1Title: (data) => {
+      const stateName = data.state.name;
+      const rand = getSeededRandom(data.state.slug);
+      const variation = Math.floor(rand() * 3);
+      
+      const h1s = [
+        `Expert Electrician in ${stateName}`,
+        `Top Rated Electricians in ${stateName}`,
+        `Local Emergency Electrician in ${stateName}`
+      ];
+      return h1s[variation];
+    },
+    
     faqs: (data) => {
       const state = data.state;
       const rand = getSeededRandom(state.slug);
@@ -43,15 +81,21 @@ export default {
       const allWhyChoose = getWhyChoosePool(null, state, data.site.BRAND);
       return allWhyChoose[Math.floor(rand() * allWhyChoose.length)];
     },
+    whoWeAreContent: (data) => {
+      const state = data.state;
+      const rand = getSeededRandom(state.slug);
+      const allWhoWeAre = getWhoWeArePool(null, state, data.site.BRAND);
+      return allWhoWeAre[Math.floor(rand() * allWhoWeAre.length)];
+    },
     localRiskText: (data) => {
       const state = data.state;
-      let text = `${state.name} homeowners and businesses can rely on our licensed local plumbers for all plumbing needs — from emergency repairs to routine maintenance.`;
+      let text = `${state.name} homeowners and businesses can rely on our licensed local electricians for all electrical needs — from emergency repairs to routine maintenance.`;
       const coldStates = ['WI','MN','MI','NY','IL','ND','SD','OH','PA','ME','VT','NH','IA','MA','MT','WY','CO','ID'];
       const hotStates = ['FL','TX','AZ','NV','NM'];
       if (coldStates.includes(state.abbr)) {
-        text = `During freezing winter months, ${state.name} homes are especially vulnerable to frozen and burst pipes. Our plumbers respond fast to prevent water damage and restore your plumbing system quickly.`;
+        text = `During severe winter storms and blizzards, ${state.name} homes are especially vulnerable to massive grid failures and deadly power outages. Our electricians respond fast with emergency generator installations, panel heavy-ups, and severe weather fault repairs to protect your family.`;
       } else if (hotStates.includes(state.abbr)) {
-        text = `${state.name}'s heat and hard water conditions can accelerate pipe corrosion and water heater wear. Our local plumbers are experienced with the unique plumbing challenges in this climate.`;
+        text = `${state.name}'s extreme summer heat forces air conditioning units to run continuously, placing immense strain on aging electrical panels. Our master electricians are experts at balancing loads, upgrading overloaded circuits, and preventing catastrophic panel meltdowns in this climate.`;
       }
       return text;
     }
