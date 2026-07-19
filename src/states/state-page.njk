@@ -13,23 +13,23 @@ eleventyComputed:
 
 {# ── Service Icon Map ──────────────────────────────────────────────────── #}
 {% set serviceIcons = {
-  'emergency-electrician': 'ph-siren',
+  'emergency-plumber': 'ph-siren',
   'wiring-rewiring': 'ph-lightbulb',
   'water-heater-repair': 'ph-thermometer',
-  'electrical-panel-upgrade': 'ph-circuit-board',
+  'plumbing-panel-upgrade': 'ph-circuit-board',
   'switch-repair-installation': 'ph-switch',
   'fixture-repair-installation': 'ph-fixture',
   'outlet-switch-installation': 'ph-plug',
   'garbage-disposal-repair': 'ph-gear',
   'leak-detection-repair': 'ph-drop',
-  'bathroom-electrical': 'ph-bathtub',
-  'kitchen-electrical': 'ph-cooking-pot',
+  'bathroom-plumbing': 'ph-bathtub',
+  'kitchen-plumbing': 'ph-cooking-pot',
   'water-filtration': 'ph-waves',
   'sump-pump-services': 'ph-pump',
   'gas-line-services': 'ph-flame',
   'repiping-services': 'ph-arrows-counter-clockwise',
   'circuit-breaker-repair': 'ph-wind',
-  'commercial-electrical': 'ph-buildings',
+  'commercial-plumbing': 'ph-buildings',
   'backflow-prevention': 'ph-shield-check'
 } %}
 
@@ -37,7 +37,7 @@ eleventyComputed:
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Electrician",
+  "@type": "Plumber",
   "name": "{{ site.BRAND }} - {{ state.name }}",
   "image": "{{ site.DOMAIN }}/favicon.svg",
   "url": "{{ site.DOMAIN }}/{{ state.slug }}/",
@@ -97,13 +97,13 @@ eleventyComputed:
         <div class="banner-content">
           <div class="sub-label">
             <i class="ph ph-map-pin" style="font-size:12px"></i>
-            {{ state.name }} Electrical Pros
+            {{ state.name }} Plumbing Pros
           </div>
           <h1 class="title">{{ h1Title }}</h1>
           <p class="description">
-            Your trusted local electricians in {{ state.name }}. Same day service for
-            wiring upgrade, panel repair, outlet repair, switch & fixture
-            installation, circuit breaker repair, fault detection and emergency electrical —
+            Your trusted local plumbers in {{ state.name }}. Same day service for
+            <strong>emergency plumbing near you</strong>, complete <strong>drain cleaning</strong>, water heater repairs, 
+            pipe leak detection, toilet repair, and complete home repiping —
             available across all {{ state.cities.length }} cities in {{ state.abbr }}.
           </p>
           <div class="btn-part">
@@ -115,7 +115,10 @@ eleventyComputed:
         </div>
       </div>
       <div class="banner-img-box">
-        <img src="/assets/images/global-hero.webp" alt="Professional electrician at work">
+        <picture>
+          <source media="(max-width: 767px)" srcset="/assets/images/mobile_hero.png">
+          <img src="/assets/images/global_hero.png" alt="Professional plumber at work" width="800" height="600" loading="eager" decoding="async">
+        </picture>
       </div>
     </div>
   </div>
@@ -165,7 +168,7 @@ eleventyComputed:
 {# ── Services Grid ─────────────────────────────────────────────────────── #}
 <div class="rs-services">
   <div class="container">
-    <h2>Professional Electrical Services in {{ state.name }}</h2>
+    <h2>Professional Plumbing Services in {{ state.name }}</h2>
     <div class="services-row">
       {% for svc in services %}
       <div class="services-slider">
@@ -188,7 +191,7 @@ eleventyComputed:
             </h3>
             <p class="description">
               Looking for {{ svc.title | lower }} in {{ state.name }}? Contact {{ site.BRAND }} at
-              {{ site.PHONE }} for professional electrical services. {{ svc.description.split('.')[0] }}.
+              {{ site.PHONE }} for professional plumbing services. {{ svc.description.split('.')[0] }}.
             </p>
             <div class="services-btn">
               <a href="{{ site.PHONE_HREF }}">
@@ -211,7 +214,7 @@ eleventyComputed:
   <div class="container">
     <div class="choose-grid">
       <div class="choose-img">
-        <img src="/assets/images/emergency-commercial-electrician.webp" alt="Professional electricians in {{ state.name }} equipped with top-tier tools for residential and commercial electrical services." loading="lazy">
+        <img src="/assets/images/commercial_plumbing.png" alt="Professional plumbers in {{ state.name }} equipped with top-tier tools for residential and commercial plumbing services." loading="lazy" width="600" height="450">
       </div>
       <div>
         <div class="sec-title4">
@@ -220,7 +223,7 @@ eleventyComputed:
             <i class="ph ph-shield-check" style="font-size:13px"></i>
             Why Choose Us
           </span>
-          <h2>Best Local Electricians in {{ state.name }}</h2>
+          <h2>Best Local Plumbers in {{ state.name }}</h2>
           <p>{{ whyChooseContent.p1 }}</p>
           <p>{{ whyChooseContent.p2 }}</p>
           <p>{{ localRiskText }}</p>
@@ -248,27 +251,27 @@ eleventyComputed:
             <i class="ph ph-info" style="font-size:13px"></i>
             Who We Are
           </span>
-          <h2>{{ state.name }} Electrical Pros</h2>
+          <h2>{{ state.name }} Plumbing Pros</h2>
           
           {{ whoWeAreContent | safe }}
 
           <p style="margin-top:20px;">
-            We serve {{ state.name }} communities with same day and 24/7 emergency electrical services.
+            We serve {{ state.name }} communities with same day and 24/7 emergency plumbing services.
           </p>
         </div>
         <div class="about-mini">
           <div class="mini-card">
             <h4><i class="ph ph-house-line" style="font-size:14px"></i> Residential</h4>
-            <p>Full electrical services for homes and apartments in {{ state.name }}.</p>
+            <p>Full plumbing services for homes and apartments in {{ state.name }}.</p>
           </div>
           <div class="mini-card">
             <h4><i class="ph ph-buildings" style="font-size:14px"></i> Commercial</h4>
-            <p>Fast commercial electrical to minimize business downtime in {{ state.name }}.</p>
+            <p>Fast commercial plumbing to minimize business downtime in {{ state.name }}.</p>
           </div>
         </div>
       </div>
       <div class="choose-img">
-        <img src="/assets/images/bathroom-electrical-services.webp" alt="Top-rated electrical company in {{ state.name }} specializing in emergency electrical, residential, and commercial." loading="lazy">
+        <img src="/assets/images/pipe_leak.png" alt="Top-rated plumbing company in {{ state.name }} specializing in emergency plumbing, residential, and commercial." loading="lazy" width="600" height="450">
       </div>
     </div>
   </div>
@@ -288,11 +291,11 @@ eleventyComputed:
   <div class="container">
     <h2 class="faq-inner-title">
       <i class="ph ph-chat-circle-dots" style="font-size:26px;color:var(--primary);margin-right:8px;vertical-align:middle"></i>
-      Frequently Asked Questions About Electricians in {{ state.name }}
+      Frequently Asked Questions About Plumbers in {{ state.name }}
     </h2>
     <div class="faq-grid">
       <div class="faq-img">
-        <img src="/assets/images/emergency-commercial-electrician.webp" alt="Frequently asked electrical questions in {{ state.name }}. Licensed electrical contractors answering your electrical panel and wiring questions." loading="lazy">
+        <img src="/assets/images/emergency_plumbing.png" alt="Frequently asked plumbing questions in {{ state.name }}. Licensed plumbing contractors serving {{ state.name }}." loading="lazy" width="600" height="450">
       </div>
       <div class="accordion" itemscope itemtype="https://schema.org/FAQPage">
         {% for faq in faqs %}
@@ -342,7 +345,7 @@ eleventyComputed:
   <div class="container">
     <h2>
       <i class="ph ph-map-trifold" style="font-size:26px;color:var(--primary);margin-right:8px;vertical-align:middle"></i>
-      Find a Electrician in {{ state.name }} Cities
+      Find a Plumber in {{ state.name }} Cities
     </h2>
     <div class="addon-row">
       {% for city in state.cities %}
@@ -368,8 +371,8 @@ eleventyComputed:
 {# ── CTA ───────────────────────────────────────────────────────────────── #}
 <div class="cta-strip">
   <div class="container">
-    <h2>Need a Electrician in {{ state.name }}? Call Now</h2>
-    <p>Our licensed local electricians are standing by for same day service across all of {{ state.name }}.</p>
+    <h2>Need a Plumber in {{ state.name }}? Call Now</h2>
+    <p>Our licensed local plumbers are standing by for same day service across all of {{ state.name }}.</p>
     <a class="readon orange" href="{{ site.PHONE_HREF }}">
       <i class="ph ph-phone-call" style="font-size:18px"></i>
       {{ site.PHONE }} — Call Now

@@ -2,7 +2,7 @@
 export default {
   PHONE: '(855) 605-2377',
   PHONE_HREF: 'tel:+18556052377',
-  BRAND: 'Local Electrician Emergency',
-  DOMAIN: 'https://localelectricianemergency.com',
+  BRAND: 'Plumber Pros Local',
+  DOMAIN: 'https://plumberproslocal.com',
   YEAR: new Date().getFullYear(),
 };

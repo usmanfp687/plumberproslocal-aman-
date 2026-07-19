@@ -1,0 +1,20 @@
+{
+  "name": "Plumber Pros Local",
+  "short_name": "PlumberPros",
+  "description": "Top-rated local plumbing services across the USA. 24/7 emergency plumbing, drain cleaning, water heater repair and more.",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#060e1f",
+  "theme_color": "#1a56db",
+  "orientation": "portrait",
+  "icons": [
+    {
+      "src": "/favicon.svg",
+      "sizes": "any",
+      "type": "image/svg+xml",
+      "purpose": "any maskable"
+    }
+  ],
+  "categories": ["business", "utilities"],
+  "lang": "en-US"
+}

@@ -15,6 +15,11 @@ module.exports = function (eleventyConfig) {
       }
       return content;
   });
+
+  const fs = require("fs");
+  eleventyConfig.addShortcode("inlinecss", function() {
+    return fs.readFileSync("styles/globals.css", "utf8");
+  });
   // --------------------------------------------------------------
   // ── Passthrough copies ──────────────────────────────────────────────────
   if (process.env.BUILD_TYPE !== 'state') {
@@ -50,7 +55,9 @@ module.exports = function (eleventyConfig) {
       let minified = await minify(content, {
         useShortDoctype: true,
         removeComments: true,
-        collapseWhitespace: true
+        collapseWhitespace: true,
+        minifyCSS: true,
+        minifyJS: true
       });
       return minified;
     }

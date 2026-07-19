@@ -6,15 +6,15 @@ pagination:
   alias: service
 permalink: "services/{{ service.slug }}/index.html"
 eleventyComputed:
-  title: "{{ service.title }} Near You | Same Day Service | Local Electrician Emergency"
-  description: "{{ service.title }} near you. Call {{ site.PHONE }} for professional and reliable local electrical services. Same day available."
+  title: "{{ service.title }} Near You | Same Day Service | Local Plumber Emergency"
+  description: "{{ service.title }} near you. Call {{ site.PHONE }} for professional and reliable local plumbing services. Same day available."
 ---
 
 {# ——— Schemas —————————————————————————————————————————————————————————— #}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "Electrician",
+  "@type": "Plumber",
   "name": "{{ service.title }} - {{ site.BRAND }}",
   "url": "{{ site.DOMAIN }}/services/{{ service.slug }}/",
   "image": "{{ site.DOMAIN }}/favicon.svg",
@@ -57,13 +57,13 @@ eleventyComputed:
         <div class="banner-content">
           <div class="sub-label">
             <i class="ph ph-map-pin" style="font-size:12px"></i>
-            Professional Electrical
+            Professional Plumbing
           </div>
           <h1 class="title">
             {{ service.title }} <span id="svcLocationSpan">Near You</span>
           </h1>
           <p class="description" id="svcBannerDesc">
-            {{ service.description }} At {{ site.BRAND }}, our licensed electricians are standing by for
+            {{ service.description }} At {{ site.BRAND }}, our licensed plumbers are standing by for
             same day service and 24/7 emergency response.
           </p>
           <div class="btn-part">
@@ -75,7 +75,7 @@ eleventyComputed:
         </div>
       </div>
       <div class="banner-img-box">
-        <img src="/assets/images/{{ service.image or 'global-hero.webp' }}" alt="{{ service.title }} services by expert local electrical contractors near you. Call {{ site.BRAND }} for same day repairs.">
+        <img src="/assets/images/{{ service.image or 'global-hero.webp' }}" alt="{{ service.title }} services by expert local plumbing contractors near you. Call {{ site.BRAND }} for same day repairs.">
       </div>
     </div>
   </div>
@@ -95,13 +95,13 @@ eleventyComputed:
           <h2>Expert {{ service.title }} <span id="svcLocH2">Near You</span></h2>
           <p>
             When you need {{ service.title | lower }} near you,
-            {{ site.BRAND }} provides industry-leading expertise and rapid response. Electrical
-            problems can escalate quickly if left untreated, leading to catastrophic electrical fires, 
+            {{ site.BRAND }} provides industry-leading expertise and rapid response. Plumbing
+            problems can escalate quickly if left untreated, leading to catastrophic plumbing fires, 
             fatal shocks, and severe property damage. Explore all of our
-            <a href="/services/" id="svcAllLink" style="color:var(--primary);text-decoration:underline">professional electrical services</a>.
+            <a href="/services/" id="svcAllLink" style="color:var(--primary);text-decoration:underline">professional plumbing services</a>.
           </p>
           <p>
-            Our licensed electricians use professional-grade tools and techniques to
+            Our licensed plumbers use professional-grade tools and techniques to
             properly diagnose and fix the issue the first time. We offer upfront
             pricing with no hidden fees, and back all our work with a strict safety guarantee.
           </p>
@@ -114,7 +114,7 @@ eleventyComputed:
         </div>
       </div>
       <div class="choose-img">
-        <img src="/assets/images/{{ service.image or 'global-hero.webp' }}" alt="Professional {{ service.title }} company near you. Licensed electricians providing top-rated electrical services." loading="lazy">
+        <img src="/assets/images/{{ service.image or 'global-hero.webp' }}" alt="Professional {{ service.title }} company near you. Licensed plumbers providing top-rated plumbing services." loading="lazy">
       </div>
     </div>
   </div>
@@ -126,7 +126,7 @@ eleventyComputed:
 <div class="cta-strip">
   <div class="container">
     <h2 id="svcCtaH2">Need {{ service.title }} Near You?</h2>
-    <p>Don't wait. Our licensed local electricians are available same day and 24/7 for emergencies.</p>
+    <p>Don't wait. Our licensed local plumbers are available same day and 24/7 for emergencies.</p>
     <a class="readon orange" href="{{ site.PHONE_HREF }}">
       <i class="ph ph-phone-call" style="font-size:18px"></i>
       {{ site.PHONE }} — Free Estimate
@@ -167,7 +167,7 @@ eleventyComputed:
   var desc = document.getElementById('svcBannerDesc');
   if (desc) {
     var newDesc = SVC_DESC.replace(/near you/gi, locText.toLowerCase());
-    desc.textContent = newDesc + ' At {{ site.BRAND }}, our licensed electricians are standing by for same day service and 24/7 emergency response.';
+    desc.textContent = newDesc + ' At {{ site.BRAND }}, our licensed plumbers are standing by for same day service and 24/7 emergency response.';
   }
 
   // CTA h2

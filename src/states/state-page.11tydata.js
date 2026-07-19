@@ -32,9 +32,9 @@ export default {
       const variation = Math.floor(rand() * 3);
       
       const titles = [
-        `Expert Electrician in ${stateName} | 24/7 Fast & Local Repair`,
-        `Top Rated Electrician in ${stateName} | Reliable Same Day`,
-        `Best Local Electrician in ${stateName} | Emergency Repair Service`
+        `Expert Plumber in ${stateName} | 24/7 Fast & Local Repair`,
+        `Top Rated Plumber in ${stateName} | Reliable Same Day`,
+        `Best Local Plumber in ${stateName} | Emergency Repair Service`
       ];
       return titles[variation];
     },
@@ -44,9 +44,9 @@ export default {
       const variation = Math.floor(rand() * 3);
       
       const descs = [
-        `Searching for a trusted electrician in ${stateName}? We offer 24/7 emergency electrical repairs, panel upgrades, and home wiring. Call our team today!`,
-        `Need an affordable electrician in ${stateName}? Our highly skilled experts deliver guaranteed same-day electrical services, circuit troubleshooting & repairs.`,
-        `Hire the best local electrician in ${stateName}. We specialize in reliable home wiring, rapid emergency power restoration, and circuit breaker installations.`
+        `Searching for a trusted plumber in ${stateName}? We offer 24/7 emergency plumbing repairs, panel upgrades, and home wiring. Call our team today!`,
+        `Need an affordable plumber in ${stateName}? Our highly skilled experts deliver guaranteed same-day plumbing services, circuit troubleshooting & repairs.`,
+        `Hire the best local plumber in ${stateName}. We specialize in reliable home wiring, rapid emergency power restoration, and circuit breaker installations.`
       ];
       return descs[variation];
     },
@@ -56,9 +56,9 @@ export default {
       const variation = Math.floor(rand() * 3);
       
       const h1s = [
-        `Expert Electrician in ${stateName}`,
-        `Top Rated Electricians in ${stateName}`,
-        `Local Emergency Electrician in ${stateName}`
+        `Expert Plumber in ${stateName}`,
+        `Top Rated Plumbers in ${stateName}`,
+        `Local Emergency Plumber in ${stateName}`
       ];
       return h1s[variation];
     },
@@ -89,13 +89,13 @@ export default {
     },
     localRiskText: (data) => {
       const state = data.state;
-      let text = `${state.name} homeowners and businesses can rely on our licensed local electricians for all electrical needs — from emergency repairs to routine maintenance.`;
+      let text = `${state.name} homeowners and businesses can rely on our licensed local plumbers for all plumbing needs — from emergency repairs to routine maintenance.`;
       const coldStates = ['WI','MN','MI','NY','IL','ND','SD','OH','PA','ME','VT','NH','IA','MA','MT','WY','CO','ID'];
       const hotStates = ['FL','TX','AZ','NV','NM'];
       if (coldStates.includes(state.abbr)) {
-        text = `During severe winter storms and blizzards, ${state.name} homes are especially vulnerable to massive grid failures and deadly power outages. Our electricians respond fast with emergency generator installations, panel heavy-ups, and severe weather fault repairs to protect your family.`;
+        text = `During severe winter storms and blizzards, ${state.name} homes are especially vulnerable to massive grid failures and deadly power outages. Our plumbers respond fast with emergency generator installations, panel heavy-ups, and severe weather fault repairs to protect your family.`;
       } else if (hotStates.includes(state.abbr)) {
-        text = `${state.name}'s extreme summer heat forces air conditioning units to run continuously, placing immense strain on aging electrical panels. Our master electricians are experts at balancing loads, upgrading overloaded circuits, and preventing catastrophic panel meltdowns in this climate.`;
+        text = `${state.name}'s extreme summer heat forces air conditioning units to run continuously, placing immense strain on aging plumbing panels. Our master plumbers are experts at balancing loads, upgrading overloaded circuits, and preventing catastrophic panel meltdowns in this climate.`;
       }
       return text;
     }
