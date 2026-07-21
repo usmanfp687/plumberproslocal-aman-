@@ -38,6 +38,7 @@ module.exports = function (eleventyConfig) {
   // ── Watch targets (for --serve / dev mode) ──────────────────────────────
   eleventyConfig.addWatchTarget("styles/");
   eleventyConfig.addWatchTarget("data/");
+  eleventyConfig.addWatchTarget("public/");
 
   // ── Conditional Ignores for Segmented Build ─────────────────────────────
   if (process.env.BUILD_TYPE === 'base') {
