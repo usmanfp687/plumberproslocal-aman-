@@ -32,9 +32,9 @@ export default {
       const variation = Math.floor(rand() * 3);
       
       const titles = [
-        `Expert Plumber in ${stateName} | 24/7 Fast & Local Repair`,
-        `Top Rated Plumber in ${stateName} | Reliable Same Day`,
-        `Best Local Plumber in ${stateName} | Emergency Repair Service`
+        `Emergency Plumber ${stateName} | 24/7 Service`,
+        `Plumber ${stateName} | Same Day Service`,
+        `Local Plumber ${stateName} | 24/7 Emergency Repairs`
       ];
       return titles[variation];
     },
@@ -44,9 +44,9 @@ export default {
       const variation = Math.floor(rand() * 3);
       
       const descs = [
-        `Searching for a trusted plumber in ${stateName}? We offer 24/7 emergency plumbing repairs, panel upgrades, and home wiring. Call our team today!`,
-        `Need an affordable plumber in ${stateName}? Our highly skilled experts deliver guaranteed same-day plumbing services, circuit troubleshooting & repairs.`,
-        `Hire the best local plumber in ${stateName}. We specialize in reliable home wiring, rapid emergency power restoration, and circuit breaker installations.`
+        `Looking for an emergency plumber in ${stateName}? We provide 24/7 plumbing services, drain cleaning, and leak repairs. Call now for same day service!`,
+        `Need a reliable plumber in ${stateName}? Our local experts offer same day service for water heaters, clogs, and emergency plumbing repairs. Call us 24/7.`,
+        `Top-rated local plumber in ${stateName}. We specialize in 24/7 emergency plumbing, pipe leak repairs, and drain cleaning. Get fast, reliable service today!`
       ];
       return descs[variation];
     },

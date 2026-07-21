@@ -32,11 +32,9 @@ export default {
       const state = data.item.state.abbr;
       const rand = getSeededRandom(`title-${data.item.city.slug}`);
       const titles = [
-        `Emergency Plumber in ${city}, ${state} | Same Day Service`,
-        `Best Plumber in ${city}, ${state} | 24/7 Emergency Plumbing`,
-        `${city} Plumber | Licensed & Insured | Fast Response`,
-        `Plumbing Services in ${city}, ${state} | Drain Cleaning & More`,
-        `#1 Plumber Near Me in ${city}, ${state} | Call Now`,
+        `Emergency Plumber ${city}, ${state} | 24/7 Service`,
+        `Plumber ${city}, ${state} | Same Day Service`,
+        `Local Plumber ${city}, ${state} | 24/7 Emergency Repairs`
       ];
       return titles[Math.floor(rand() * titles.length)];
     },
@@ -45,9 +43,9 @@ export default {
       const state = data.item.state.abbr;
       const rand = getSeededRandom(`desc-${data.item.city.slug}`);
       const descs = [
-        `Need a plumber in ${city}, ${state}? We offer 24/7 emergency plumbing, drain cleaning, water heater repair, and pipe leak fixes. Licensed, insured, same-day service. Call now!`,
-        `Top-rated plumber serving ${city}, ${state}. Fast emergency response for burst pipes, clogged drains, water heater repairs & more. Get a free estimate today!`,
-        `Trusted plumbing company in ${city}, ${state}. We fix leaks, clogs, water heaters, sewer lines & more. Available 24/7. Locally owned & operated. Call (855) 605-2377.`,
+        `Looking for an emergency plumber in ${city}, ${state}? We provide 24/7 plumbing services, drain cleaning, and leak repairs. Call now for same day service!`,
+        `Need a reliable plumber in ${city}, ${state}? Our local experts offer same day service for water heaters, clogs, and emergency plumbing repairs. Call us 24/7.`,
+        `Top-rated local plumber in ${city}, ${state}. We specialize in 24/7 emergency plumbing, pipe leak repairs, and drain cleaning. Get fast, reliable service today!`
       ];
       return descs[Math.floor(rand() * descs.length)];
     },

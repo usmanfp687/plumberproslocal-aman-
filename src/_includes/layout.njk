@@ -31,7 +31,7 @@
   <meta property="og:title" content="{{ (title | safe) if title else (site.BRAND + ' | Same Day Plumbing Service') }}">
   <meta property="og:description" content="{{ (description | safe) if description else 'Professional plumbing services near you. Emergency plumber, drain cleaning, water heater repair, pipe leak repair, toilet repair, and more. Call 24/7.' }}">
   <meta property="og:url" content="{{ site.DOMAIN }}{{ page.url }}">
-  <meta property="og:image" content="{{ site.DOMAIN }}/assets/images/global_hero.png">
+  <meta property="og:image" content="{{ site.DOMAIN }}/assets/images/global_hero.webp">
   <meta property="og:image:width" content="1200">
   <meta property="og:image:height" content="630">
   <meta property="og:image:alt" content="Professional Plumber - {{ site.BRAND }}">
@@ -41,7 +41,7 @@
   <meta name="twitter:site" content="@plumberproslocal">
   <meta name="twitter:title" content="{{ (title | safe) if title else (site.BRAND + ' | Same Day Plumbing Service') }}">
   <meta name="twitter:description" content="{{ (description | safe) if description else 'Professional plumbing services near you. Emergency plumber, drain cleaning, water heater repair, pipe leak repair, toilet repair, and more. Call 24/7.' }}">
-  <meta name="twitter:image" content="{{ site.DOMAIN }}/assets/images/global_hero.png">
+  <meta name="twitter:image" content="{{ site.DOMAIN }}/assets/images/global_hero.webp">
 
   {# ── Critical Resource Hints (fire immediately, before HTML parsed) ── #}
   <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -52,8 +52,8 @@
   <link rel="dns-prefetch" href="https://leadslytic.com">
 
   {# ── Hero Image Preloads — browser starts downloading before CSS/JS ── #}
-  <link rel="preload" as="image" href="/assets/images/mobile_hero.png" media="(max-width: 767px)" fetchpriority="high">
-  <link rel="preload" as="image" href="/assets/images/global_hero.png" media="(min-width: 768px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/images/mobile_hero.webp" type="image/webp" media="(max-width: 767px)" fetchpriority="high">
+  <link rel="preload" as="image" href="/assets/images/global_hero.webp" type="image/webp" media="(min-width: 768px)" fetchpriority="high">
 
   {# ── Inline Critical Stylesheet — zero render blocking ── #}
   <style>{% inlinecss %}</style>
